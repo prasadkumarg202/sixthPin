@@ -1,6 +1,8 @@
 import { MetadataRoute } from "next";
 import { capabilitiesData } from "@/data/capabilities";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://sixthpin.com";
 
