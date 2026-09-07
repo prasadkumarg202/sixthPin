@@ -1,0 +1,32 @@
+{
+  "name": "SixthPin | Enterprise AI & Digital Engineering",
+  "short_name": "SixthPin",
+  "description": "Global enterprise digital engineering and AI platform partner accelerating digital business transformation.",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "background_color": "#060911",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

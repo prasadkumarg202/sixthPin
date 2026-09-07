@@ -1,39 +1,67 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { PwaRegister } from "@/components/pwa/PwaRegister";
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#060911" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
-  title: "SixthPin | Enterprise AI, Autonomous Multi-Agent Systems & Cloud Engineering",
+  title: "SixthPin | Enterprise AI, Autonomous Digital Engineering & Cloud Platforms",
   description:
-    "SixthPin is an elite enterprise digital engineering and AI platform partner. We architect production-grade multi-agent systems, modernize legacy monoliths, and scale cloud data lakehouses.",
+    "SixthPin is an elite enterprise digital engineering and AI platform partner. We architect production-grade enterprise systems, modern lakehouses, and high-velocity cloud engineering.",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "SixthPin",
+  },
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+    shortcut: "/logo.png",
+  },
   keywords: [
     "Enterprise AI",
-    "Multi-Agent Orchestration",
-    "LangGraph",
+    "Digital Engineering",
     "Generative AI",
-    "GraphRAG",
-    "Legacy Application Modernization",
-    "Data Lakehouse",
-    "Databricks",
-    "Snowflake",
-    "Cloud Engineering",
+    "Modern Data Lakehouse",
+    "Cloud Architecture",
     "DevSecOps",
     "Kubernetes"
   ],
-  authors: [{ name: "SixthPin Technologies Architecture Team" }],
+  authors: [{ name: "SixthPin Technologies Team" }],
   openGraph: {
-    title: "SixthPin | Engineering Autonomous Enterprises",
+    title: "SixthPin | Accelerating Digital Business Transformation",
     description:
-      "Move beyond GenAI sandbox prototypes to production-grade multi-agent automation, modern lakehouses, and high-velocity cloud engineering.",
+      "Enterprise digital engineering, modern data platforms, and practical AI solutions driving measurable enterprise ROI.",
     url: "https://sixthpin.com",
     siteName: "SixthPin Technologies",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://sixthpin.com/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "SixthPin Technologies",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "SixthPin | Enterprise AI & Digital Engineering",
-    description: "Architecting autonomous digital enterprises with verifiable SLAs and deterministic AI guardrails.",
+    description: "Accelerating digital business transformation with cloud precision and practical enterprise AI.",
+    images: ["https://sixthpin.com/logo.png"],
   },
   robots: {
     index: true,
@@ -53,7 +81,7 @@ export default function RootLayout({
     url: "https://sixthpin.com",
     logo: "https://sixthpin.com/logo.png",
     description:
-      "Enterprise AI, Multi-Agent Systems Orchestration, Cloud Transformation, and Digital Engineering Services.",
+      "Enterprise AI, Cloud Transformation, and Digital Engineering Services.",
     sameAs: [
       "https://linkedin.com/company/sixthpin",
       "https://github.com/sixthpin"
@@ -65,9 +93,7 @@ export default function RootLayout({
     },
     knowsAbout: [
       "Artificial Intelligence",
-      "Multi-Agent Systems",
-      "LangGraph",
-      "Retrieval-Augmented Generation",
+      "Digital Engineering",
       "Cloud Modernization",
       "Data Lakehouse Architecture"
     ]
@@ -76,13 +102,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="apple-touch-icon" href="/logo.png" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-touch-fullscreen" content="yes" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased selection:bg-blue-600 selection:text-white">
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden">
+        <ThemeProvider>
+          {children}
+          {/* PWA Service Worker & Mobile Install Banner */}
+          <PwaRegister />
+        </ThemeProvider>
       </body>
     </html>
   );
