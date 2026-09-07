@@ -44,7 +44,6 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
   const [isPlaying, setIsPlaying] = useState(true);
   const [videoError, setVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const blurVideoRef = useRef<HTMLVideoElement | null>(null);
 
   const currentVideo = heroVideos[activeVideoIndex];
 
@@ -52,7 +51,6 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
   useEffect(() => {
     setVideoError(false);
     const video = videoRef.current;
-    const blurVideo = blurVideoRef.current;
 
     if (video) {
       video.defaultMuted = true;
@@ -62,27 +60,17 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
         console.log("Autoplay waiting on interaction:", err);
       });
     }
-
-    if (blurVideo) {
-      blurVideo.defaultMuted = true;
-      blurVideo.muted = true;
-      blurVideo.playsInline = true;
-      blurVideo.play().catch(() => {});
-    }
   }, [activeVideoIndex]);
 
   // Handle play/pause toggle
   const togglePlayPause = () => {
     const video = videoRef.current;
-    const blurVideo = blurVideoRef.current;
     if (!video) return;
     if (isPlaying) {
       video.pause();
-      blurVideo?.pause();
       setIsPlaying(false);
     } else {
       video.play().then(() => {
-        blurVideo?.play().catch(() => {});
         setIsPlaying(true);
       }).catch(() => {});
     }
@@ -90,39 +78,22 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
 
   return (
     <section className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-slate-950 text-white border-b border-white/10 transition-colors duration-200">
-      {/* HTML5 Video Background Layer - RESPONSIVE MOBILE 9:16 & DESKTOP 16:9 */}
+      {/* HTML5 Video Background Layer - Covers full background behind text on Mobile and Desktop */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {!videoError ? (
-          <>
-            {/* Ambient Blurred Video Halo for full mobile bleed without black bars */}
-            <video
-              ref={blurVideoRef}
-              key={`blur-${currentVideo.src}`}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              className="absolute inset-0 w-full h-full object-cover object-center opacity-45 blur-2xl scale-125"
-            >
-              <source src={currentVideo.src} type="video/mp4" />
-            </video>
-
-            {/* Crisp Foreground Video - object-contain on mobile (shows full video without cropping), object-cover on desktop */}
-            <video
-              ref={videoRef}
-              key={`main-${currentVideo.src}`}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              onError={() => setVideoError(true)}
-              className="absolute inset-0 w-full h-full object-contain sm:object-cover object-center opacity-85 sm:opacity-80 transition-opacity duration-700 scale-100 sm:scale-105"
-            >
-              <source src={currentVideo.src} type="video/mp4" />
-            </video>
-          </>
+          <video
+            ref={videoRef}
+            key={currentVideo.src}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            onError={() => setVideoError(true)}
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-75 sm:opacity-80 transition-opacity duration-700 scale-105"
+          >
+            <source src={currentVideo.src} type="video/mp4" />
+          </video>
         ) : null}
 
         {/* Balanced Dark Cinematic Vignette & Ambient Glows */}
