@@ -6,8 +6,6 @@ import { Footer } from "@/components/layout/Footer";
 import { EnterpriseHero } from "@/components/hero/EnterpriseHero";
 import { TrustBanner } from "@/components/sections/TrustBanner";
 import { ValueOutcomes } from "@/components/sections/ValueOutcomes";
-import { AiSolutionsMotionArchitecture } from "@/components/sections/AiSolutionsMotionArchitecture";
-import { AgenticShowcase } from "@/components/sections/AgenticShowcase";
 import { CapabilitiesGrid } from "@/components/sections/CapabilitiesGrid";
 import { IndustryPlaybooks } from "@/components/sections/IndustryPlaybooks";
 import { CaseStudySpotlight } from "@/components/sections/CaseStudySpotlight";
@@ -30,23 +28,17 @@ export default function HomePage() {
         onOpenConsultation={() => setConsultationOpen(true)}
       />
 
-      {/* Hero Section with White/Blue/Orange Palette + Dynamic Theme Adaptability */}
+      {/* Hero Section with Clean Typography & 4-Pillar Solutions Matrix */}
       <EnterpriseHero
         onOpenAssessment={() => setAssessmentOpen(true)}
         onOpenConsultation={() => setConsultationOpen(true)}
       />
 
-      {/* Trust & Compliance Ticker */}
+      {/* Trust & Cloud Alliance Ticker */}
       <TrustBanner />
 
       {/* Measurable Value Outcomes */}
       <ValueOutcomes />
-
-      {/* Autonomous AI Solutions Architecture Motion Flow */}
-      <AiSolutionsMotionArchitecture />
-
-      {/* Agentic Swarms Live Visualizer */}
-      <AgenticShowcase />
 
       {/* Capabilities Matrix */}
       <CapabilitiesGrid />
@@ -57,10 +49,10 @@ export default function HomePage() {
       {/* Case Studies Spotlight */}
       <CaseStudySpotlight />
 
-      {/* Technology Ecosystem */}
+      {/* Technology Ecosystem Alliances */}
       <TechEcosystem />
 
-      {/* Curated Whitepapers & Insights */}
+      {/* Curated Insights & Whitepapers */}
       <InsightsPreview />
 
       {/* Bottom Conversion Section */}
