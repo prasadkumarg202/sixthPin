@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 
 interface AnimatedLogoProps {
@@ -10,62 +10,67 @@ interface AnimatedLogoProps {
 export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
   className = "",
 }) => {
-  const [isPulsing, setIsPulsing] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [videoError, setVideoError] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
-  // Trigger pulse glow animation every 25 seconds (and on initial load after 2s)
   useEffect(() => {
-    const triggerPulse = () => {
-      setIsPulsing(true);
-      setTimeout(() => {
-        setIsPulsing(false);
-      }, 1600); // 1.6s duration
-    };
-
-    // Initial attention pulse
-    const initialTimer = setTimeout(triggerPulse, 2000);
-
-    // Recurring pulse every 25 seconds
-    const interval = setInterval(triggerPulse, 25000);
-
-    return () => {
-      clearTimeout(initialTimer);
-      clearInterval(interval);
-    };
+    const video = videoRef.current;
+    if (video) {
+      video.defaultMuted = true;
+      video.muted = true;
+      video.playsInline = true;
+      video.play().catch((err) => {
+        console.log("Logo video autoplay:", err);
+      });
+    }
   }, []);
 
   const handleMouseEnter = () => {
-    setIsPulsing(true);
-    setTimeout(() => setIsPulsing(false), 1600);
+    const video = videoRef.current;
+    if (video) {
+      video.currentTime = 0;
+      video.play().catch(() => {});
+    }
   };
 
   return (
     <Link
       href="/"
-      className={`relative inline-flex items-center group py-1 ${className}`}
+      className={`relative inline-flex items-center group py-1 shrink-0 ${className}`}
       onMouseEnter={handleMouseEnter}
       aria-label="SixthPin - AI & Digital Engineering Home"
     >
-      <div
-        className={`relative flex items-center rounded-xl p-1 bg-white/95 dark:bg-white/90 shadow-sm border border-slate-200/80 dark:border-white/20 transition-all duration-300 ${
-          isPulsing ? "animate-logo-pulse" : "group-hover:scale-[1.03] group-hover:shadow-md"
-        }`}
-      >
-        {/* Main Logo Image */}
-        <img
-          src="/logo.png"
-          alt="SixthPin - AI & Digital Engineering: Ideas to Impact"
-          className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-300"
-        />
+      <div className="relative flex items-center rounded-xl p-0.5 sm:p-1 bg-white dark:bg-white/95 shadow-sm border border-slate-200/90 dark:border-white/20 transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-md overflow-hidden">
+        {!videoError ? (
+          <video
+            ref={videoRef}
+            src="/videos/sixthpin-ai-digital-engineering-logo-animation.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            onLoadedData={() => setIsVideoLoaded(true)}
+            onError={() => setVideoError(true)}
+            className={`h-8 sm:h-9 md:h-10 w-auto max-w-[150px] sm:max-w-[170px] md:max-w-[190px] object-contain transition-opacity duration-300 ${
+              isVideoLoaded ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ) : null}
 
-        {/* Ambient Subtle Glow Layer */}
-        <div
-          className={`absolute inset-0 rounded-xl pointer-events-none transition-opacity duration-500 ${
-            isPulsing
-              ? "opacity-100 ring-2 ring-cyan-400/60 shadow-[0_0_15px_rgba(56,189,248,0.4)]"
-              : "opacity-0"
-          }`}
-        />
+        {/* Fallback image when video is loading or unsupported */}
+        {(!isVideoLoaded || videoError) && (
+          <img
+            src="/logo.png"
+            alt="SixthPin - AI & Digital Engineering: Ideas to Impact"
+            className={`h-8 sm:h-9 md:h-10 w-auto object-contain ${
+              isVideoLoaded && !videoError ? "absolute inset-0 pointer-events-none opacity-0" : "opacity-100"
+            }`}
+          />
+        )}
       </div>
     </Link>
   );
 };
+
