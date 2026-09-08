@@ -9,6 +9,29 @@ interface EnterpriseHeroProps {
   onOpenConsultation: () => void;
 }
 
+interface VideoTheme {
+  badgeBg: string;
+  badgeBorder: string;
+  badgeText: string;
+  badgeIconColor: string;
+  headlineGradient: string;
+  cardBg: string;
+  cardBorder: string;
+  cardShadow: string;
+  cardGlow: string;
+  focusBg: string;
+  focusBorder: string;
+  focusText: string;
+  focusIconColor: string;
+  purposeText: string;
+  nextBtnGradient: string;
+  nextBtnShadow: string;
+  nextBtnTextColor: string;
+  progressBarActive: string;
+  progressBarDone: string;
+  ambientGlow: string;
+}
+
 interface VideoPhase {
   id: string;
   step: string;
@@ -18,6 +41,7 @@ interface VideoPhase {
   purpose: string;
   highlight: string;
   src: string;
+  theme: VideoTheme;
 }
 
 const heroVideos: VideoPhase[] = [
@@ -30,6 +54,28 @@ const heroVideos: VideoPhase[] = [
     purpose: "Deconstructing legacy silos into modular, secure, and enterprise-grade cloud foundations.",
     highlight: "Modular Cloud & API Architecture",
     src: "/videos/Prompt_Option_The_Blueprint.mp4",
+    theme: {
+      badgeBg: "bg-blue-950/85",
+      badgeBorder: "border-sky-400/50",
+      badgeText: "text-sky-300",
+      badgeIconColor: "text-sky-400",
+      headlineGradient: "bg-gradient-to-r from-white via-sky-100 to-cyan-300",
+      cardBg: "bg-gradient-to-br from-slate-950/95 via-blue-950/90 to-slate-900/95",
+      cardBorder: "border-sky-400/60",
+      cardShadow: "shadow-[0_0_40px_rgba(56,189,248,0.25)]",
+      cardGlow: "bg-sky-500/20",
+      focusBg: "bg-sky-500/20",
+      focusBorder: "border-sky-400/50",
+      focusText: "text-sky-300",
+      focusIconColor: "text-sky-400",
+      purposeText: "text-sky-50",
+      nextBtnGradient: "bg-gradient-to-r from-blue-600 to-sky-600 hover:from-blue-500 hover:to-sky-500",
+      nextBtnShadow: "shadow-blue-500/40",
+      nextBtnTextColor: "text-white",
+      progressBarActive: "bg-gradient-to-r from-blue-500 to-sky-400 shadow-sky-500/50",
+      progressBarDone: "bg-sky-400/60",
+      ambientGlow: "bg-blue-500/20",
+    },
   },
   {
     id: "ai-native",
@@ -40,6 +86,28 @@ const heroVideos: VideoPhase[] = [
     purpose: "Orchestrating autonomous agents, enterprise RAG pipelines, and deterministic LLM systems.",
     highlight: "Multi-Agent & Production GenAI",
     src: "/videos/Prompt_Option_AI_Native_Eng.mp4",
+    theme: {
+      badgeBg: "bg-emerald-950/85",
+      badgeBorder: "border-emerald-400/50",
+      badgeText: "text-emerald-300",
+      badgeIconColor: "text-emerald-400",
+      headlineGradient: "bg-gradient-to-r from-white via-emerald-100 to-teal-300",
+      cardBg: "bg-gradient-to-br from-slate-950/95 via-emerald-950/90 to-teal-950/95",
+      cardBorder: "border-emerald-400/60",
+      cardShadow: "shadow-[0_0_40px_rgba(52,211,153,0.25)]",
+      cardGlow: "bg-emerald-500/20",
+      focusBg: "bg-emerald-500/20",
+      focusBorder: "border-emerald-400/50",
+      focusText: "text-emerald-300",
+      focusIconColor: "text-emerald-400",
+      purposeText: "text-emerald-50",
+      nextBtnGradient: "bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500",
+      nextBtnShadow: "shadow-emerald-500/40",
+      nextBtnTextColor: "text-white",
+      progressBarActive: "bg-gradient-to-r from-emerald-500 to-teal-400 shadow-emerald-500/50",
+      progressBarDone: "bg-emerald-400/60",
+      ambientGlow: "bg-emerald-500/20",
+    },
   },
   {
     id: "human-centric",
@@ -50,6 +118,28 @@ const heroVideos: VideoPhase[] = [
     purpose: "Blending intuitive user experience, contextual automation, and high-velocity developer tools.",
     highlight: "High-Velocity Experience Engineering",
     src: "/videos/Prompt_Option_Human_Centric.mp4",
+    theme: {
+      badgeBg: "bg-amber-950/85",
+      badgeBorder: "border-amber-400/50",
+      badgeText: "text-amber-300",
+      badgeIconColor: "text-amber-400",
+      headlineGradient: "bg-gradient-to-r from-white via-amber-100 to-orange-300",
+      cardBg: "bg-gradient-to-br from-slate-950/95 via-amber-950/90 to-orange-950/95",
+      cardBorder: "border-amber-400/60",
+      cardShadow: "shadow-[0_0_40px_rgba(251,191,36,0.25)]",
+      cardGlow: "bg-amber-500/20",
+      focusBg: "bg-amber-500/20",
+      focusBorder: "border-amber-400/50",
+      focusText: "text-amber-300",
+      focusIconColor: "text-amber-400",
+      purposeText: "text-amber-50",
+      nextBtnGradient: "bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400",
+      nextBtnShadow: "shadow-amber-500/40",
+      nextBtnTextColor: "text-slate-950 font-black",
+      progressBarActive: "bg-gradient-to-r from-amber-500 to-orange-400 shadow-amber-500/50",
+      progressBarDone: "bg-amber-400/60",
+      ambientGlow: "bg-amber-500/20",
+    },
   },
   {
     id: "transform",
@@ -60,6 +150,28 @@ const heroVideos: VideoPhase[] = [
     purpose: "Delivering measurable business ROI, continuous compliance, and future-proof digital agility.",
     highlight: "End-to-End Digital Modernization",
     src: "/videos/Prompt_Option_The_Transform.mp4",
+    theme: {
+      badgeBg: "bg-purple-950/85",
+      badgeBorder: "border-purple-400/50",
+      badgeText: "text-purple-300",
+      badgeIconColor: "text-purple-400",
+      headlineGradient: "bg-gradient-to-r from-white via-purple-100 to-fuchsia-300",
+      cardBg: "bg-gradient-to-br from-slate-950/95 via-purple-950/90 to-indigo-950/95",
+      cardBorder: "border-purple-400/60",
+      cardShadow: "shadow-[0_0_40px_rgba(192,132,252,0.25)]",
+      cardGlow: "bg-purple-500/20",
+      focusBg: "bg-purple-500/20",
+      focusBorder: "border-purple-400/50",
+      focusText: "text-purple-300",
+      focusIconColor: "text-purple-400",
+      purposeText: "text-purple-50",
+      nextBtnGradient: "bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500 hover:from-purple-400 hover:to-pink-400",
+      nextBtnShadow: "shadow-purple-500/40",
+      nextBtnTextColor: "text-white font-bold",
+      progressBarActive: "bg-gradient-to-r from-purple-500 to-fuchsia-400 shadow-purple-500/50",
+      progressBarDone: "bg-purple-400/60",
+      ambientGlow: "bg-purple-500/20",
+    },
   },
 ];
 
@@ -81,6 +193,7 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const currentVideo = heroVideos[activeVideoIndex];
+  const currentTheme = currentVideo.theme;
 
   // Guaranteed browser autoplay handling with muted attribute
   useEffect(() => {
@@ -181,7 +294,7 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
   };
 
   return (
-    <section className="relative pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-slate-950 text-white border-b border-white/10 transition-colors duration-200 min-h-[640px] flex flex-col justify-center">
+    <section className="relative pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-slate-950 text-white border-b border-white/10 transition-colors duration-500 min-h-[640px] flex flex-col justify-center">
       {/* HTML5 Video Background Layer - Full Coverage Behind Text */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {!videoError ? (
@@ -201,15 +314,15 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
           </video>
         ) : null}
 
-        {/* Balanced Dark Cinematic Vignette & Ambient Glows */}
+        {/* Balanced Dark Cinematic Vignette & Dynamic Ambient Glows that change with current video theme */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/45 to-black/90 transition-opacity duration-300" />
         <div className="absolute inset-0 bg-theme-grid opacity-20" />
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[380px] bg-blue-500/15 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute top-1/3 right-10 w-[450px] h-[320px] bg-orange-500/15 rounded-full blur-[130px] pointer-events-none" />
+        <div className={`absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[380px] ${currentTheme.ambientGlow} rounded-full blur-[140px] pointer-events-none transition-all duration-700`} />
+        <div className="absolute top-1/3 right-10 w-[450px] h-[320px] bg-orange-500/10 rounded-full blur-[130px] pointer-events-none" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        {/* --- STAGE A: SEQUENTIAL INTRO (VIDEOS 1 TO 4 PLAYING ONE BY ONE WITH PURPOSE) --- */}
+        {/* --- STAGE A: SEQUENTIAL INTRO (VIDEOS 1 TO 4 PLAYING ONE BY ONE WITH PURPOSE & DYNAMIC THEMING) --- */}
         {!isIntroComplete ? (
           <div className="max-w-3xl mx-auto text-center space-y-5 sm:space-y-6">
             {/* Top Phase Indicator with Progress Segments */}
@@ -219,11 +332,11 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
                   <button
                     key={vid.id}
                     onClick={() => setActiveVideoIndex(idx)}
-                    className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
+                    className={`h-1.5 sm:h-2 rounded-full transition-all duration-500 ${
                       activeVideoIndex === idx
-                        ? "w-10 sm:w-14 bg-gradient-to-r from-blue-500 to-cyan-400 shadow-md shadow-cyan-500/50"
+                        ? `w-10 sm:w-14 ${vid.theme.progressBarActive} shadow-md`
                         : activeVideoIndex > idx
-                        ? "w-5 sm:w-7 bg-blue-400/60"
+                        ? `w-5 sm:w-7 ${vid.theme.progressBarDone}`
                         : "w-5 sm:w-7 bg-white/20 hover:bg-white/40"
                     }`}
                     title={`Video ${idx + 1}: ${vid.title}`}
@@ -232,26 +345,27 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
                 ))}
               </div>
 
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-blue-950/80 border border-blue-400/40 text-cyan-300 shadow-xl backdrop-blur-md">
-                <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
+              {/* Dynamic Phase Pill Badge */}
+              <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold ${currentTheme.badgeBg} border ${currentTheme.badgeBorder} ${currentTheme.badgeText} shadow-xl backdrop-blur-md transition-all duration-500`}>
+                <Sparkles className={`w-3.5 h-3.5 ${currentTheme.badgeIconColor} animate-pulse`} />
                 <span>PHASE {currentVideo.step} OF 04 &bull; {currentVideo.title.toUpperCase()}</span>
               </div>
             </div>
 
-            {/* Video-Specific Headline with Vivid Gradient Font */}
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight drop-shadow-2xl leading-[1.2] sm:leading-[1.15] min-h-[70px] sm:min-h-[100px] flex items-center justify-center bg-gradient-to-r from-white via-cyan-100 to-sky-300 bg-clip-text text-transparent">
+            {/* Video-Specific Headline with Dynamic Gradient Font */}
+            <h2 className={`text-2xl sm:text-4xl md:text-5xl font-black tracking-tight drop-shadow-2xl leading-[1.2] sm:leading-[1.15] min-h-[70px] sm:min-h-[100px] flex items-center justify-center ${currentTheme.headlineGradient} bg-clip-text text-transparent transition-all duration-500`}>
               {currentVideo.headline}
             </h2>
 
-            {/* Video-Specific Purpose Card with Rich Background & Colored Fonts */}
-            <div className="p-5 sm:p-6 rounded-3xl bg-gradient-to-br from-slate-900/90 via-blue-950/80 to-black/95 border-2 border-cyan-400/50 backdrop-blur-2xl max-w-2xl mx-auto shadow-[0_0_35px_rgba(56,189,248,0.25)] relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
+            {/* Video-Specific Purpose Card with Dynamic Per-Video Background, Border, Shadow, & Font Colors */}
+            <div className={`p-5 sm:p-6 rounded-3xl ${currentTheme.cardBg} border-2 ${currentTheme.cardBorder} backdrop-blur-2xl max-w-2xl mx-auto ${currentTheme.cardShadow} relative overflow-hidden group transition-all duration-500`}>
+              <div className={`absolute top-0 right-0 w-32 h-32 ${currentTheme.cardGlow} rounded-full blur-2xl pointer-events-none transition-all duration-500`} />
               <div className="flex items-center justify-center gap-2 mb-2">
-                <span className="px-3 py-1 rounded-full text-xs font-mono font-extrabold uppercase tracking-wider bg-cyan-500/20 border border-cyan-400/50 text-cyan-300 shadow-sm flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" /> Focus: {currentVideo.highlight}
+                <span className={`px-3 py-1 rounded-full text-xs font-mono font-extrabold uppercase tracking-wider ${currentTheme.focusBg} border ${currentTheme.focusBorder} ${currentTheme.focusText} shadow-sm flex items-center gap-1.5 transition-all duration-500`}>
+                  <CheckCircle2 className={`w-3.5 h-3.5 ${currentTheme.focusIconColor}`} /> Focus: {currentVideo.highlight}
                 </span>
               </div>
-              <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-medium">
+              <p className={`text-sm sm:text-base ${currentTheme.purposeText} leading-relaxed font-medium transition-colors duration-500`}>
                 {currentVideo.purpose}
               </p>
             </div>
@@ -261,7 +375,7 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
               {activeVideoIndex < heroVideos.length - 1 ? (
                 <button
                   onClick={() => setActiveVideoIndex((prev) => prev + 1)}
-                  className="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 shadow-lg shadow-blue-500/40 transition-all flex items-center gap-2 group"
+                  className={`px-5 py-2.5 rounded-xl text-xs font-bold ${currentTheme.nextBtnTextColor} ${currentTheme.nextBtnGradient} shadow-lg ${currentTheme.nextBtnShadow} transition-all flex items-center gap-2 group`}
                 >
                   Next Video ({activeVideoIndex + 2}/4)
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -369,9 +483,9 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
                       <button
                         key={vid.id}
                         onClick={() => setActiveVideoIndex(idx)}
-                        className={`px-2.5 py-1 sm:px-3 sm:py-1 rounded-full transition-all duration-200 text-[10px] sm:text-xs font-bold whitespace-nowrap ${
+                        className={`px-2.5 py-1 sm:px-3 sm:py-1 rounded-full transition-all duration-300 text-[10px] sm:text-xs font-bold whitespace-nowrap ${
                           activeVideoIndex === idx
-                            ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-md shadow-cyan-500/40 scale-105"
+                            ? `${vid.theme.nextBtnGradient} ${vid.theme.nextBtnTextColor} shadow-md scale-105`
                             : "text-slate-300 hover:text-white hover:bg-white/10"
                         }`}
                       >
