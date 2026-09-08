@@ -327,7 +327,93 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* --- MOBILE IMPORTANT HEADINGS BAR (Vibrant Colors & Animations) --- */}
+      <div className="lg:hidden w-full border-t border-slate-200/80 dark:border-white/10 bg-slate-50/95 dark:bg-[#070b14]/95 backdrop-blur-md overflow-x-auto scrollbar-none py-1.5 px-3">
+        <div className="flex items-center gap-1.5 w-max">
+          {/* AI & Automation */}
+          <Link
+            href="/services/multi-agent-orchestration"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-cyan-500/20 via-blue-500/15 to-indigo-500/20 text-cyan-700 dark:text-cyan-300 border border-cyan-400/50 shadow-sm shadow-cyan-500/10 active:scale-95 transition-transform whitespace-nowrap group"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-cyan-500 animate-spin" style={{ animationDuration: "6s" }} />
+            <span>AI & Automation</span>
+            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-extrabold bg-cyan-500 text-white shadow-sm animate-pulse">
+              AI
+            </span>
+          </Link>
+
+          {/* Digital Engineering */}
+          <Link
+            href="/services/legacy-modernization"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-indigo-500/20 via-purple-500/15 to-blue-500/20 text-indigo-700 dark:text-indigo-300 border border-indigo-400/50 shadow-sm shadow-indigo-500/10 active:scale-95 transition-transform whitespace-nowrap"
+          >
+            <Layers className="w-3.5 h-3.5 text-indigo-500" />
+            <span>Digital Engineering</span>
+            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-extrabold bg-indigo-500 text-white shadow-sm">
+              ENG
+            </span>
+          </Link>
+
+          {/* Data & Cloud */}
+          <Link
+            href="/services/cloud-native-platforms"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-sky-500/20 via-blue-500/15 to-cyan-500/20 text-sky-700 dark:text-sky-300 border border-sky-400/50 shadow-sm shadow-sky-500/10 active:scale-95 transition-transform whitespace-nowrap"
+          >
+            <Cloud className="w-3.5 h-3.5 text-sky-500" />
+            <span>Data & Cloud</span>
+            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-extrabold bg-sky-500 text-white shadow-sm">
+              CLOUD
+            </span>
+          </Link>
+
+          {/* Solutions */}
+          <Link
+            href="/services"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-emerald-500/20 via-teal-500/15 to-green-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-400/50 shadow-sm shadow-emerald-500/10 active:scale-95 transition-transform whitespace-nowrap"
+          >
+            <Cpu className="w-3.5 h-3.5 text-emerald-500" />
+            <span>Solutions</span>
+            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-extrabold bg-emerald-500 text-white shadow-sm">
+              CORE
+            </span>
+          </Link>
+
+          {/* Case Studies */}
+          <Link
+            href="/case-studies"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-amber-500/20 via-orange-500/15 to-yellow-500/20 text-amber-700 dark:text-amber-300 border border-amber-400/50 shadow-sm shadow-amber-500/10 active:scale-95 transition-transform whitespace-nowrap"
+          >
+            <Activity className="w-3.5 h-3.5 text-amber-500" />
+            <span>Case Studies</span>
+            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-extrabold bg-amber-500 text-white shadow-sm">
+              ROI
+            </span>
+          </Link>
+
+          {/* Insights */}
+          <Link
+            href="/insights"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-rose-500/20 via-pink-500/15 to-purple-500/20 text-rose-700 dark:text-rose-300 border border-rose-400/50 shadow-sm shadow-rose-500/10 active:scale-95 transition-transform whitespace-nowrap"
+          >
+            <FileText className="w-3.5 h-3.5 text-rose-500" />
+            <span>Insights</span>
+            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-extrabold bg-rose-500 text-white shadow-sm">
+              NEW
+            </span>
+          </Link>
+
+          {/* Company */}
+          <Link
+            href="/company/about"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-slate-500/20 via-slate-600/15 to-blue-500/20 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-white/20 shadow-sm active:scale-95 transition-transform whitespace-nowrap"
+          >
+            <Users className="w-3.5 h-3.5 text-slate-500 dark:text-slate-300" />
+            <span>Company</span>
+          </Link>
+        </div>
+      </div>
+
+      {/* Mobile Full Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white dark:bg-[#060911] border-b border-slate-200 dark:border-white/10 px-4 pt-3 pb-8 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl">
           <div className="space-y-3">

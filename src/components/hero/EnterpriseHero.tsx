@@ -181,7 +181,7 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
   };
 
   return (
-    <section className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-slate-950 text-white border-b border-white/10 transition-colors duration-200 min-h-[640px] flex flex-col justify-center">
+    <section className="relative pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-slate-950 text-white border-b border-white/10 transition-colors duration-200 min-h-[640px] flex flex-col justify-center">
       {/* HTML5 Video Background Layer - Full Coverage Behind Text */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {!videoError ? (
