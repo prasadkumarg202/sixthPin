@@ -90,6 +90,59 @@ const iconBgMap: Record<string, string> = {
   Radio: "bg-blue-50 border-blue-200 dark:bg-blue-950/40 dark:border-blue-500/30",
 };
 
+const navItemStyleMap: Record<
+  string,
+  {
+    icon: React.ReactNode;
+    bgClasses: string;
+    textClasses: string;
+    activeClasses: string;
+  }
+> = {
+  "Solutions": {
+    icon: <Cpu className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />,
+    bgClasses: "bg-emerald-500/10 hover:bg-emerald-500/20 border-emerald-500/30 dark:bg-emerald-500/15 dark:border-emerald-500/40",
+    textClasses: "text-emerald-800 dark:text-emerald-300 font-bold",
+    activeClasses: "bg-emerald-500/25 border-emerald-500 text-emerald-900 dark:text-emerald-200 ring-1 ring-emerald-400/50",
+  },
+  "AI & Automation": {
+    icon: <Sparkles className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 animate-spin" style={{ animationDuration: "6s" }} />,
+    bgClasses: "bg-cyan-500/10 hover:bg-cyan-500/20 border-cyan-500/30 dark:bg-cyan-500/15 dark:border-cyan-500/40",
+    textClasses: "text-cyan-800 dark:text-cyan-300 font-bold",
+    activeClasses: "bg-cyan-500/25 border-cyan-500 text-cyan-900 dark:text-cyan-200 ring-1 ring-cyan-400/50",
+  },
+  "Digital Engineering": {
+    icon: <Layers className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />,
+    bgClasses: "bg-indigo-500/10 hover:bg-indigo-500/20 border-indigo-500/30 dark:bg-indigo-500/15 dark:border-indigo-500/40",
+    textClasses: "text-indigo-800 dark:text-indigo-300 font-bold",
+    activeClasses: "bg-indigo-500/25 border-indigo-500 text-indigo-900 dark:text-indigo-200 ring-1 ring-indigo-400/50",
+  },
+  "Data & Cloud": {
+    icon: <Cloud className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400" />,
+    bgClasses: "bg-sky-500/10 hover:bg-sky-500/20 border-sky-500/30 dark:bg-sky-500/15 dark:border-sky-500/40",
+    textClasses: "text-sky-800 dark:text-sky-300 font-bold",
+    activeClasses: "bg-sky-500/25 border-sky-500 text-sky-900 dark:text-sky-200 ring-1 ring-sky-400/50",
+  },
+  "Case Studies": {
+    icon: <Activity className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />,
+    bgClasses: "bg-amber-500/10 hover:bg-amber-500/20 border-amber-500/30 dark:bg-amber-500/15 dark:border-amber-500/40",
+    textClasses: "text-amber-800 dark:text-amber-300 font-bold",
+    activeClasses: "bg-amber-500/25 border-amber-500 text-amber-900 dark:text-amber-200 ring-1 ring-amber-400/50",
+  },
+  "Insights": {
+    icon: <FileText className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400" />,
+    bgClasses: "bg-rose-500/10 hover:bg-rose-500/20 border-rose-500/30 dark:bg-rose-500/15 dark:border-rose-500/40",
+    textClasses: "text-rose-800 dark:text-rose-300 font-bold",
+    activeClasses: "bg-rose-500/25 border-rose-500 text-rose-900 dark:text-rose-200 ring-1 ring-rose-400/50",
+  },
+  "Company": {
+    icon: <Users className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />,
+    bgClasses: "bg-purple-500/10 hover:bg-purple-500/20 border-purple-500/30 dark:bg-purple-500/15 dark:border-purple-500/40",
+    textClasses: "text-purple-800 dark:text-purple-300 font-bold",
+    activeClasses: "bg-purple-500/25 border-purple-500 text-purple-900 dark:text-purple-200 ring-1 ring-purple-400/50",
+  },
+};
+
 export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsultation }) => {
   const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
@@ -117,47 +170,57 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
           {/* Official Animated Brand Logo */}
           <AnimatedLogo />
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-0.5">
-            {navigationData.map((item) => (
-              <div
-                key={item.label}
-                className="relative"
-                onMouseEnter={() => item.megaMenu && setActiveDropdown(item.label)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                {item.href ? (
-                  <Link
-                    href={item.href}
-                    className="px-3 py-1.5 rounded-md text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <button
-                    className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors flex items-center gap-1 ${
-                      activeDropdown === item.label
-                        ? "text-blue-600 dark:text-blue-400 bg-slate-100 dark:bg-white/5"
-                        : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5"
-                    }`}
-                  >
-                    {item.label}
-                    <ChevronDown
-                      className={`w-3 h-3 transition-transform duration-200 ${
-                        activeDropdown === item.label ? "rotate-180 text-blue-600 dark:text-blue-400" : "text-slate-400"
-                      }`}
-                    />
-                  </button>
-                )}
+          {/* Desktop Navigation with Rich Backgrounds, Icons & Custom Font Colors */}
+          <nav className="hidden lg:flex items-center space-x-1.5">
+            {navigationData.map((item) => {
+              const style = navItemStyleMap[item.label] || {
+                icon: null,
+                bgClasses: "bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/10",
+                textClasses: "text-slate-700 dark:text-slate-200 font-bold",
+                activeClasses: "bg-blue-600 text-white",
+              };
 
-                {/* Dropdown Container */}
-                {item.megaMenu && activeDropdown === item.label && (
-                  <div className="fixed top-16 left-0 right-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pointer-events-none transition-all animate-in fade-in slide-in-from-top-2 duration-150">
-                    <div className="pointer-events-auto bg-white dark:bg-[#0b111e] rounded-2xl p-6 shadow-2xl border border-slate-200/90 dark:border-white/10 text-slate-800 dark:text-white">
-                      {/* Solutions 3-Column Layout */}
-                      {item.megaMenu.type === "solutions-columns" ? (
-                        <div className="grid grid-cols-3 gap-8">
-                          {item.megaMenu.sections.map((sec) => (
+              const isActive = activeDropdown === item.label;
+
+              return (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => item.megaMenu && setActiveDropdown(item.label)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className={`px-2.5 py-1.5 rounded-xl text-xs flex items-center gap-1.5 border transition-all duration-200 shadow-sm ${style.textClasses} ${style.bgClasses}`}
+                    >
+                      {style.icon}
+                      <span>{item.label}</span>
+                    </Link>
+                  ) : (
+                    <button
+                      className={`px-2.5 py-1.5 rounded-xl text-xs flex items-center gap-1.5 border transition-all duration-200 shadow-sm ${style.textClasses} ${
+                        isActive ? style.activeClasses : style.bgClasses
+                      }`}
+                    >
+                      {style.icon}
+                      <span>{item.label}</span>
+                      <ChevronDown
+                        className={`w-3 h-3 transition-transform duration-200 opacity-70 ${
+                          isActive ? "rotate-180 opacity-100" : ""
+                        }`}
+                      />
+                    </button>
+                  )}
+
+                  {/* Dropdown Container */}
+                  {item.megaMenu && activeDropdown === item.label && (
+                    <div className="fixed top-16 left-0 right-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pointer-events-none transition-all animate-in fade-in slide-in-from-top-2 duration-150">
+                      <div className="pointer-events-auto bg-white dark:bg-[#0b111e] rounded-2xl p-6 shadow-2xl border border-slate-200/90 dark:border-white/10 text-slate-800 dark:text-white">
+                        {/* Solutions 3-Column Layout */}
+                        {item.megaMenu.type === "solutions-columns" ? (
+                          <div className="grid grid-cols-3 gap-8">
+                            {item.megaMenu.sections.map((sec) => (
                             <div key={sec.category} className="space-y-3">
                               <h5 className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold border-b border-slate-100 dark:border-white/5 pb-2">
                                 {sec.category}
@@ -266,8 +329,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
                   </div>
                 )}
               </div>
-            ))}
-          </nav>
+            );
+          })}
+        </nav>
 
           {/* Action CTAs + Theme Toggle */}
           <div className="hidden lg:flex items-center space-x-2.5">
