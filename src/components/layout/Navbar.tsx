@@ -364,8 +364,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
             </button>
           </div>
 
-          {/* Mobile Menu Button + Theme Toggle */}
+          {/* Mobile Actions: Contact Sales Button beside Logo + Theme Toggle + Menu Button */}
           <div className="flex lg:hidden items-center space-x-1.5">
+            <button
+              onClick={onOpenConsultation}
+              className="px-2.5 py-1.5 rounded-xl text-[11px] font-bold text-white bg-blue-600 hover:bg-blue-700 active:scale-95 shadow-md shadow-blue-500/30 flex items-center gap-1 transition-all"
+            >
+              <span>Contact Sales</span>
+              <ArrowRight className="w-3 h-3" />
+            </button>
             <button
               onClick={toggleTheme}
               className="p-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 border border-slate-200 dark:border-white/10"
