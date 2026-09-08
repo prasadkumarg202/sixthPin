@@ -321,16 +321,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
       </div>
 
       {/* --- MOBILE IMPORTANT HEADINGS BAR (Vibrant Colors & Animations) --- */}
-      <div className="lg:hidden w-full border-t border-slate-200/80 dark:border-white/10 bg-slate-50/95 dark:bg-[#070b14]/95 backdrop-blur-md overflow-x-auto scrollbar-none py-1.5 px-3">
-        <div className="flex items-center gap-1.5 w-max">
+      <div className="lg:hidden w-full border-t border-slate-200/80 dark:border-white/10 bg-gradient-to-r from-slate-100 via-white to-slate-100 dark:from-[#060911] dark:via-[#0c1322] dark:to-[#060911] backdrop-blur-xl overflow-x-auto scrollbar-none py-2 px-3 shadow-inner">
+        <div className="flex items-center gap-2 w-max">
           {/* AI & Automation */}
           <Link
             href="/services/multi-agent-orchestration"
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-cyan-500/20 via-blue-500/15 to-indigo-500/20 text-cyan-700 dark:text-cyan-300 border border-cyan-400/50 shadow-sm shadow-cyan-500/10 active:scale-95 transition-transform whitespace-nowrap group"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-gradient-to-r from-cyan-500/25 via-blue-600/20 to-indigo-600/25 text-cyan-600 dark:text-cyan-300 border-2 border-cyan-400/60 shadow-md shadow-cyan-500/20 active:scale-95 transition-all whitespace-nowrap group"
           >
-            <Sparkles className="w-3.5 h-3.5 text-cyan-500 animate-spin" style={{ animationDuration: "6s" }} />
-            <span>AI & Automation</span>
-            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-extrabold bg-cyan-500 text-white shadow-sm animate-pulse">
+            <span className="w-5 h-5 rounded-full bg-cyan-500/20 flex items-center justify-center border border-cyan-400/40">
+              <Sparkles className="w-3.5 h-3.5 text-cyan-500 dark:text-cyan-300 animate-spin" style={{ animationDuration: "6s" }} />
+            </span>
+            <span className="tracking-tight text-cyan-900 dark:text-cyan-200">AI & Automation</span>
+            <span className="px-1.5 py-0.5 rounded-full text-[9px] font-mono font-black bg-cyan-500 text-slate-950 shadow-sm animate-pulse">
               AI
             </span>
           </Link>
@@ -338,11 +340,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
           {/* Digital Engineering */}
           <Link
             href="/services/legacy-modernization"
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-indigo-500/20 via-purple-500/15 to-blue-500/20 text-indigo-700 dark:text-indigo-300 border border-indigo-400/50 shadow-sm shadow-indigo-500/10 active:scale-95 transition-transform whitespace-nowrap"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-gradient-to-r from-indigo-500/25 via-purple-600/20 to-blue-600/25 text-indigo-700 dark:text-indigo-300 border-2 border-indigo-400/60 shadow-md shadow-indigo-500/20 active:scale-95 transition-all whitespace-nowrap"
           >
-            <Layers className="w-3.5 h-3.5 text-indigo-500" />
-            <span>Digital Engineering</span>
-            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-extrabold bg-indigo-500 text-white shadow-sm">
+            <span className="w-5 h-5 rounded-full bg-indigo-500/20 flex items-center justify-center border border-indigo-400/40">
+              <Layers className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-300" />
+            </span>
+            <span className="tracking-tight text-indigo-900 dark:text-indigo-200">Digital Engineering</span>
+            <span className="px-1.5 py-0.5 rounded-full text-[9px] font-mono font-black bg-indigo-500 text-white shadow-sm">
               ENG
             </span>
           </Link>
@@ -350,11 +354,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
           {/* Data & Cloud */}
           <Link
             href="/services/cloud-native-platforms"
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-sky-500/20 via-blue-500/15 to-cyan-500/20 text-sky-700 dark:text-sky-300 border border-sky-400/50 shadow-sm shadow-sky-500/10 active:scale-95 transition-transform whitespace-nowrap"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-gradient-to-r from-sky-500/25 via-blue-600/20 to-cyan-600/25 text-sky-700 dark:text-sky-300 border-2 border-sky-400/60 shadow-md shadow-sky-500/20 active:scale-95 transition-all whitespace-nowrap"
           >
-            <Cloud className="w-3.5 h-3.5 text-sky-500" />
-            <span>Data & Cloud</span>
-            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-extrabold bg-sky-500 text-white shadow-sm">
+            <span className="w-5 h-5 rounded-full bg-sky-500/20 flex items-center justify-center border border-sky-400/40">
+              <Cloud className="w-3.5 h-3.5 text-sky-600 dark:text-sky-300" />
+            </span>
+            <span className="tracking-tight text-sky-900 dark:text-sky-200">Data & Cloud</span>
+            <span className="px-1.5 py-0.5 rounded-full text-[9px] font-mono font-black bg-sky-500 text-white shadow-sm">
               CLOUD
             </span>
           </Link>
@@ -362,11 +368,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
           {/* Solutions */}
           <Link
             href="/services"
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-emerald-500/20 via-teal-500/15 to-green-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-400/50 shadow-sm shadow-emerald-500/10 active:scale-95 transition-transform whitespace-nowrap"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-gradient-to-r from-emerald-500/25 via-teal-600/20 to-green-600/25 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-400/60 shadow-md shadow-emerald-500/20 active:scale-95 transition-all whitespace-nowrap"
           >
-            <Cpu className="w-3.5 h-3.5 text-emerald-500" />
-            <span>Solutions</span>
-            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-extrabold bg-emerald-500 text-white shadow-sm">
+            <span className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-400/40">
+              <Cpu className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-300" />
+            </span>
+            <span className="tracking-tight text-emerald-900 dark:text-emerald-200">Solutions</span>
+            <span className="px-1.5 py-0.5 rounded-full text-[9px] font-mono font-black bg-emerald-500 text-white shadow-sm">
               CORE
             </span>
           </Link>
@@ -374,11 +382,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
           {/* Case Studies */}
           <Link
             href="/case-studies"
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-amber-500/20 via-orange-500/15 to-yellow-500/20 text-amber-700 dark:text-amber-300 border border-amber-400/50 shadow-sm shadow-amber-500/10 active:scale-95 transition-transform whitespace-nowrap"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-gradient-to-r from-amber-500/25 via-orange-600/20 to-yellow-600/25 text-amber-700 dark:text-amber-300 border-2 border-amber-400/60 shadow-md shadow-amber-500/20 active:scale-95 transition-all whitespace-nowrap"
           >
-            <Activity className="w-3.5 h-3.5 text-amber-500" />
-            <span>Case Studies</span>
-            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-extrabold bg-amber-500 text-white shadow-sm">
+            <span className="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center border border-amber-400/40">
+              <Activity className="w-3.5 h-3.5 text-amber-600 dark:text-amber-300" />
+            </span>
+            <span className="tracking-tight text-amber-900 dark:text-amber-200">Case Studies</span>
+            <span className="px-1.5 py-0.5 rounded-full text-[9px] font-mono font-black bg-amber-500 text-white shadow-sm">
               ROI
             </span>
           </Link>
@@ -386,11 +396,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
           {/* Insights */}
           <Link
             href="/insights"
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-rose-500/20 via-pink-500/15 to-purple-500/20 text-rose-700 dark:text-rose-300 border border-rose-400/50 shadow-sm shadow-rose-500/10 active:scale-95 transition-transform whitespace-nowrap"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-gradient-to-r from-rose-500/25 via-pink-600/20 to-purple-600/25 text-rose-700 dark:text-rose-300 border-2 border-rose-400/60 shadow-md shadow-rose-500/20 active:scale-95 transition-all whitespace-nowrap"
           >
-            <FileText className="w-3.5 h-3.5 text-rose-500" />
-            <span>Insights</span>
-            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-extrabold bg-rose-500 text-white shadow-sm">
+            <span className="w-5 h-5 rounded-full bg-rose-500/20 flex items-center justify-center border border-rose-400/40">
+              <FileText className="w-3.5 h-3.5 text-rose-600 dark:text-rose-300" />
+            </span>
+            <span className="tracking-tight text-rose-900 dark:text-rose-200">Insights</span>
+            <span className="px-1.5 py-0.5 rounded-full text-[9px] font-mono font-black bg-rose-500 text-white shadow-sm">
               NEW
             </span>
           </Link>
@@ -398,10 +410,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
           {/* Company */}
           <Link
             href="/company/about"
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-slate-500/20 via-slate-600/15 to-blue-500/20 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-white/20 shadow-sm active:scale-95 transition-transform whitespace-nowrap"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-gradient-to-r from-slate-600/25 via-slate-700/20 to-blue-600/25 text-slate-800 dark:text-slate-200 border-2 border-slate-300 dark:border-white/30 shadow-md active:scale-95 transition-all whitespace-nowrap"
           >
-            <Users className="w-3.5 h-3.5 text-slate-500 dark:text-slate-300" />
-            <span>Company</span>
+            <span className="w-5 h-5 rounded-full bg-slate-500/20 flex items-center justify-center border border-slate-400/40">
+              <Users className="w-3.5 h-3.5 text-slate-700 dark:text-slate-200" />
+            </span>
+            <span className="tracking-tight">Company</span>
           </Link>
         </div>
       </div>
@@ -416,18 +430,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
                   <Link
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block py-1.5 text-sm font-semibold text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400"
+                    className="block py-1.5 text-sm font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400"
                   >
                     {item.label}
                   </Link>
                 ) : (
                   <div>
-                    <span className="block py-1 text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">
+                    <span className="block py-1 text-xs font-mono uppercase tracking-wider text-blue-600 dark:text-cyan-400 font-extrabold">
                       {item.label}
                     </span>
                     {item.megaMenu?.sections.map((section) => (
                       <div key={section.category} className="pl-3 space-y-1 my-2">
-                        <span className="text-[10px] text-blue-600 dark:text-blue-400 font-bold uppercase tracking-wider block">
+                        <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider block">
                           {section.category}
                         </span>
                         {section.items.map((sub) => (
@@ -435,7 +449,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
                             key={sub.title}
                             href={sub.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-1 text-xs text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white"
+                            className="block py-1 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-cyan-400"
                           >
                             {sub.title}
                           </Link>
@@ -454,9 +468,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
                 setMobileMenuOpen(false);
                 onOpenAssessment?.();
               }}
-              className="w-full py-2 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center gap-2"
+              className="w-full py-2.5 rounded-xl text-xs font-bold text-slate-800 dark:text-white bg-gradient-to-r from-amber-500/20 via-orange-500/20 to-amber-500/20 border border-amber-400/40 flex items-center justify-center gap-2 shadow-sm"
             >
-              <Cpu className="w-3.5 h-3.5 text-orange-500 dark:text-orange-400" />
+              <Cpu className="w-4 h-4 text-orange-500 dark:text-orange-400" />
               AI Maturity Benchmark
             </button>
             <button
@@ -464,7 +478,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
                 setMobileMenuOpen(false);
                 onOpenConsultation?.();
               }}
-              className="w-full py-2 rounded-lg text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 dark:hover:bg-blue-500 flex items-center justify-center gap-1.5"
+              className="w-full py-2.5 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 dark:hover:bg-blue-500 shadow-md shadow-blue-500/30 flex items-center justify-center gap-1.5"
             >
               Contact Sales
               <ArrowRight className="w-3.5 h-3.5" />

@@ -238,17 +238,20 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
               </div>
             </div>
 
-            {/* Video-Specific Headline */}
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-xl leading-[1.2] sm:leading-[1.15] min-h-[70px] sm:min-h-[100px] flex items-center justify-center">
+            {/* Video-Specific Headline with Vivid Gradient Font */}
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight drop-shadow-2xl leading-[1.2] sm:leading-[1.15] min-h-[70px] sm:min-h-[100px] flex items-center justify-center bg-gradient-to-r from-white via-cyan-100 to-sky-300 bg-clip-text text-transparent">
               {currentVideo.headline}
             </h2>
 
-            {/* Video-Specific Purpose Text */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-black/65 border border-white/20 backdrop-blur-xl max-w-2xl mx-auto shadow-2xl">
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-cyan-400 mb-1.5 flex items-center justify-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-cyan-400" /> Purpose: {currentVideo.highlight}
-              </p>
-              <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
+            {/* Video-Specific Purpose Card with Rich Background & Colored Fonts */}
+            <div className="p-5 sm:p-6 rounded-3xl bg-gradient-to-br from-slate-900/90 via-blue-950/80 to-black/95 border-2 border-cyan-400/50 backdrop-blur-2xl max-w-2xl mx-auto shadow-[0_0_35px_rgba(56,189,248,0.25)] relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <span className="px-3 py-1 rounded-full text-xs font-mono font-extrabold uppercase tracking-wider bg-cyan-500/20 border border-cyan-400/50 text-cyan-300 shadow-sm flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" /> Focus: {currentVideo.highlight}
+                </span>
+              </div>
+              <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-medium">
                 {currentVideo.purpose}
               </p>
             </div>
@@ -258,7 +261,7 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
               {activeVideoIndex < heroVideos.length - 1 ? (
                 <button
                   onClick={() => setActiveVideoIndex((prev) => prev + 1)}
-                  className="px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-500/30 transition-all flex items-center gap-2 group"
+                  className="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 shadow-lg shadow-blue-500/40 transition-all flex items-center gap-2 group"
                 >
                   Next Video ({activeVideoIndex + 2}/4)
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -266,18 +269,18 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
               ) : (
                 <button
                   onClick={() => handleVideoEnded()}
-                  className="px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-500/30 transition-all flex items-center gap-2"
+                  className="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-emerald-400 to-teal-300 hover:from-emerald-300 hover:to-teal-200 shadow-lg shadow-emerald-500/40 transition-all flex items-center gap-2"
                 >
-                  Enter Home Page
+                  Enter Full Site
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               )}
 
               <button
                 onClick={handleSkipIntro}
-                className="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md transition-all flex items-center gap-1.5"
+                className="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-200 hover:text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md transition-all flex items-center gap-1.5"
               >
-                <FastForward className="w-3.5 h-3.5" />
+                <FastForward className="w-3.5 h-3.5 text-cyan-400" />
                 Skip to Full Site
               </button>
 
@@ -296,7 +299,7 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
           <>
             <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-5 mb-8 sm:mb-10 animate-fade-in">
               {/* Top Pill Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-white/10 border border-white/20 text-white shadow-lg backdrop-blur-md">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-gradient-to-r from-blue-900/60 via-indigo-900/60 to-purple-900/60 border border-cyan-400/40 text-cyan-200 shadow-lg backdrop-blur-md">
                 <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
                 <span>Digital Business Transformation & Enterprise AI</span>
               </div>
@@ -323,14 +326,14 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
               >
                 <button
                   onClick={onOpenConsultation}
-                  className="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all flex items-center justify-center gap-2 group"
+                  className="w-full sm:w-auto px-6 py-3.5 sm:px-7 sm:py-3.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-all flex items-center justify-center gap-2 group border border-blue-400/30"
                 >
                   Talk to Our Solutions Team
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <Link
                   href="/services"
-                  className="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl text-xs font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-6 py-3.5 sm:px-7 sm:py-3.5 rounded-xl text-xs font-bold text-white bg-slate-900/80 hover:bg-slate-800/90 border-2 border-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2"
                 >
                   Explore Solutions & Capabilities
                 </Link>
@@ -342,22 +345,22 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
                   isTypingFinished ? "opacity-100" : "opacity-0"
                 }`}
               >
-                <span className="flex items-center gap-1.5">
+                <span className="flex items-center gap-1.5 font-semibold text-emerald-300">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> 4-Week PoC-to-Production
                 </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" /> SOC2 Type II & HIPAA Certified
+                <span className="flex items-center gap-1.5 font-semibold text-sky-300">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-sky-400" /> SOC2 Type II & HIPAA Certified
                 </span>
-                <span className="flex items-center gap-1.5">
+                <span className="flex items-center gap-1.5 font-semibold text-orange-300">
                   <CheckCircle2 className="w-3.5 h-3.5 text-orange-400" /> 99.8% Engineering SLA
                 </span>
               </div>
 
               {/* Video Scene Switcher & Replay Button Bar */}
               <div className="pt-3 flex items-center justify-center max-w-full">
-                <div className="inline-flex items-center gap-1 p-1 rounded-full bg-black/75 border border-white/20 shadow-2xl backdrop-blur-xl text-[10px] sm:text-[11px] font-mono max-w-full overflow-x-auto">
-                  <div className="flex items-center gap-1 pl-2 pr-1 text-cyan-400 font-bold text-[9px] sm:text-[10px] uppercase tracking-wider shrink-0">
-                    <Film className="w-3 h-3 animate-pulse" />
+                <div className="inline-flex items-center gap-1 p-1 rounded-full bg-black/80 border border-white/25 shadow-2xl backdrop-blur-xl text-[10px] sm:text-[11px] font-mono max-w-full overflow-x-auto">
+                  <div className="flex items-center gap-1 pl-2.5 pr-1 text-cyan-400 font-extrabold text-[9px] sm:text-[10px] uppercase tracking-wider shrink-0">
+                    <Film className="w-3.5 h-3.5 animate-pulse" />
                     <span className="hidden xs:inline">SCENE:</span>
                   </div>
 
@@ -366,9 +369,9 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
                       <button
                         key={vid.id}
                         onClick={() => setActiveVideoIndex(idx)}
-                        className={`px-2.5 py-1 sm:px-3 sm:py-1 rounded-full transition-all duration-200 text-[10px] sm:text-xs font-semibold whitespace-nowrap ${
+                        className={`px-2.5 py-1 sm:px-3 sm:py-1 rounded-full transition-all duration-200 text-[10px] sm:text-xs font-bold whitespace-nowrap ${
                           activeVideoIndex === idx
-                            ? "bg-blue-600 text-white shadow-md shadow-blue-600/40 font-bold scale-105"
+                            ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-md shadow-cyan-500/40 scale-105"
                             : "text-slate-300 hover:text-white hover:bg-white/10"
                         }`}
                       >
@@ -389,78 +392,82 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
                   <button
                     onClick={handleReplayIntro}
                     title="Replay video tour with story"
-                    className="px-2 py-1 rounded-full hover:bg-white/15 text-slate-300 hover:text-cyan-300 transition-colors ml-1 text-[10px] flex items-center gap-1 shrink-0"
+                    className="px-2 py-1 rounded-full hover:bg-white/15 text-slate-300 hover:text-cyan-300 transition-colors ml-1 text-[10px] font-semibold flex items-center gap-1 shrink-0"
                   >
-                    <RotateCcw className="w-3 h-3" />
-                    <span className="hidden sm:inline">Replay Intro</span>
+                    <RotateCcw className="w-3 h-3 text-cyan-400" />
+                    <span className="hidden sm:inline">Replay Story</span>
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* Clean 4-Pillar Solutions Summary Grid */}
+            {/* --- 4-PILLAR SOLUTIONS SUMMARY GRID (Rich Color Gradients & Visual Cards) --- */}
             <div
-              className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5 mt-6 sm:mt-8 transition-all duration-700 ${
+              className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mt-6 sm:mt-8 transition-all duration-700 ${
                 isTypingFinished ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              <div className="p-4 sm:p-5 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/15 hover:border-blue-400 hover:bg-black/70 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-200 group">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-500/20 border border-blue-400/30 text-blue-400 flex items-center justify-center mb-3">
-                  <Cpu className="w-4 h-4 sm:w-5 sm:h-5" />
+              {/* Pillar 1: AI & Data */}
+              <div className="p-5 rounded-3xl bg-gradient-to-br from-blue-950/80 via-slate-900/90 to-blue-900/40 backdrop-blur-2xl border-2 border-blue-400/40 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 group">
+                <div className="w-10 h-10 rounded-2xl bg-blue-500/20 border border-blue-400/40 text-blue-400 flex items-center justify-center mb-3 shadow-inner">
+                  <Cpu className="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="text-xs sm:text-sm font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-sm sm:text-base font-extrabold text-blue-300 mb-1.5 group-hover:text-white transition-colors">
                   Enterprise AI & Data
                 </h3>
-                <p className="text-[11px] sm:text-xs text-slate-300 leading-relaxed mb-2.5">
+                <p className="text-xs text-slate-300 leading-relaxed mb-3">
                   Applied Generative AI, intelligent automation workflows, and modern lakehouse architectures.
                 </p>
-                <Link href="/services/multi-agent-orchestration" className="text-[11px] sm:text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1">
-                  Learn more <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                <Link href="/services/multi-agent-orchestration" className="text-xs font-bold text-blue-400 hover:text-blue-200 flex items-center gap-1.5">
+                  Explore AI Solutions <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
 
-              <div className="p-4 sm:p-5 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/15 hover:border-indigo-400 hover:bg-black/70 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-200 group">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-500/20 border border-indigo-400/30 text-indigo-400 flex items-center justify-center mb-3">
-                  <Layers className="w-4 h-4 sm:w-5 sm:h-5" />
+              {/* Pillar 2: Digital Engineering */}
+              <div className="p-5 rounded-3xl bg-gradient-to-br from-indigo-950/80 via-slate-900/90 to-purple-900/40 backdrop-blur-2xl border-2 border-indigo-400/40 hover:border-indigo-400 hover:shadow-2xl hover:shadow-indigo-500/25 transition-all duration-300 group">
+                <div className="w-10 h-10 rounded-2xl bg-indigo-500/20 border border-indigo-400/40 text-indigo-400 flex items-center justify-center mb-3 shadow-inner">
+                  <Layers className="w-5 h-5 text-indigo-400 group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="text-xs sm:text-sm font-bold text-white mb-1 group-hover:text-indigo-400 transition-colors">
+                <h3 className="text-sm sm:text-base font-extrabold text-indigo-300 mb-1.5 group-hover:text-white transition-colors">
                   Digital Engineering
                 </h3>
-                <p className="text-[11px] sm:text-xs text-slate-300 leading-relaxed mb-2.5">
+                <p className="text-xs text-slate-300 leading-relaxed mb-3">
                   Custom software engineering, microservices modernization, and cloud-native application delivery.
                 </p>
-                <Link href="/services/legacy-modernization" className="text-[11px] sm:text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1">
-                  Learn more <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                <Link href="/services/legacy-modernization" className="text-xs font-bold text-indigo-400 hover:text-indigo-200 flex items-center gap-1.5">
+                  Explore Engineering <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
 
-              <div className="p-4 sm:p-5 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/15 hover:border-cyan-400 hover:bg-black/70 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-200 group">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-cyan-500/20 border border-cyan-400/30 text-cyan-400 flex items-center justify-center mb-3">
-                  <Cloud className="w-4 h-4 sm:w-5 sm:h-5" />
+              {/* Pillar 3: Cloud & DevOps */}
+              <div className="p-5 rounded-3xl bg-gradient-to-br from-cyan-950/80 via-slate-900/90 to-teal-900/40 backdrop-blur-2xl border-2 border-cyan-400/40 hover:border-cyan-400 hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 group">
+                <div className="w-10 h-10 rounded-2xl bg-cyan-500/20 border border-cyan-400/40 text-cyan-400 flex items-center justify-center mb-3 shadow-inner">
+                  <Cloud className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="text-xs sm:text-sm font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-sm sm:text-base font-extrabold text-cyan-300 mb-1.5 group-hover:text-white transition-colors">
                   Cloud & DevOps
                 </h3>
-                <p className="text-[11px] sm:text-xs text-slate-300 leading-relaxed mb-2.5">
+                <p className="text-xs text-slate-300 leading-relaxed mb-3">
                   Scalable multi-cloud infrastructure, Kubernetes orchestration, and automated CI/CD pipelines.
                 </p>
-                <Link href="/services/cloud-native-platforms" className="text-[11px] sm:text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1">
-                  Learn more <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                <Link href="/services/cloud-native-platforms" className="text-xs font-bold text-cyan-400 hover:text-cyan-200 flex items-center gap-1.5">
+                  Explore Cloud Platforms <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
 
-              <div className="p-4 sm:p-5 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/15 hover:border-orange-400 hover:bg-black/70 hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-200 group">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-500/20 border border-orange-400/30 text-orange-400 flex items-center justify-center mb-3">
-                  <Shield className="w-4 h-4 sm:w-5 sm:h-5" />
+              {/* Pillar 4: Security & Governance */}
+              <div className="p-5 rounded-3xl bg-gradient-to-br from-orange-950/80 via-slate-900/90 to-amber-900/40 backdrop-blur-2xl border-2 border-orange-400/40 hover:border-orange-400 hover:shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 group">
+                <div className="w-10 h-10 rounded-2xl bg-orange-500/20 border border-orange-400/40 text-orange-400 flex items-center justify-center mb-3 shadow-inner">
+                  <Shield className="w-5 h-5 text-orange-400 group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="text-xs sm:text-sm font-bold text-white mb-1 group-hover:text-orange-400 transition-colors">
+                <h3 className="text-sm sm:text-base font-extrabold text-orange-300 mb-1.5 group-hover:text-white transition-colors">
                   Security & Governance
                 </h3>
-                <p className="text-[11px] sm:text-xs text-slate-300 leading-relaxed mb-2.5">
+                <p className="text-xs text-slate-300 leading-relaxed mb-3">
                   Zero-trust architecture, enterprise data compliance, and automated risk governance frameworks.
                 </p>
-                <Link href="/services/ai-governance-guardrails" className="text-[11px] sm:text-xs font-semibold text-orange-400 hover:text-orange-300 flex items-center gap-1">
-                  Learn more <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                <Link href="/services/ai-governance-guardrails" className="text-xs font-bold text-orange-400 hover:text-orange-200 flex items-center gap-1.5">
+                  Explore Governance <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
