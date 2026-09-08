@@ -169,3 +169,23 @@
   animation: spinSlow 12s linear infinite;
 }
 
+/* Attention-Grabbing Brand Logo Pulse/Glow Animation */
+@keyframes logoAttention {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(0, 119, 255, 0));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(0, 119, 255, 0.65)) drop-shadow(0 0 4px rgba(249, 115, 22, 0.4));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(0, 119, 255, 0));
+  }
+}
+
+.animate-logo-pulse {
+  animation: logoAttention 1.5s ease-in-out;
+}
+

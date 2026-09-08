@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Shield, Lock, Terminal, Globe2, Mail, MapPin } from "lucide-react";
+import { AnimatedLogo } from "@/components/brand/AnimatedLogo";
 
 export const Footer = () => {
   return (
@@ -45,13 +46,9 @@ export const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand Column */}
           <div className="col-span-2 space-y-3">
-            <Link href="/" className="inline-block group mb-1">
-              <img
-                src="/logo.png"
-                alt="SixthPin - AI & Digital Engineering"
-                className="h-11 w-auto object-contain rounded-lg bg-white p-1.5 shadow-md transition-transform duration-200 group-hover:scale-[1.02]"
-              />
-            </Link>
+            <div className="mb-1">
+              <AnimatedLogo />
+            </div>
             <p className="text-[11px] text-slate-400 leading-relaxed max-w-sm">
               SixthPin is a global digital engineering and enterprise AI platform partner. We architect autonomous multi-agent systems, modernize legacy monoliths, and scale cloud data lakehouses.
             </p>

@@ -76,26 +76,47 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "SixthPin Technologies",
-    url: "https://sixthpin.com",
-    logo: "https://sixthpin.com/logo.png",
-    description:
-      "Enterprise AI, Cloud Transformation, and Digital Engineering Services.",
-    sameAs: [
-      "https://linkedin.com/company/sixthpin",
-      "https://github.com/sixthpin"
-    ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "customer support",
-      email: "contact@sixthpin.com"
-    },
-    knowsAbout: [
-      "Artificial Intelligence",
-      "Digital Engineering",
-      "Cloud Modernization",
-      "Data Lakehouse Architecture"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "SixthPin Technologies",
+        "url": "https://sixthpin.pages.dev",
+        "logo": "https://sixthpin.pages.dev/logo.png",
+        "description":
+          "Enterprise AI, Cloud Transformation, and Digital Engineering Services.",
+        "sameAs": [
+          "https://linkedin.com/company/sixthpin",
+          "https://github.com/sixthpin"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "contact@sixthpin.com"
+        },
+        "knowsAbout": [
+          "Artificial Intelligence",
+          "Digital Engineering",
+          "Cloud Modernization",
+          "Data Lakehouse Architecture"
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "name": "SixthPin Animated Logo & Brand Introduction",
+        "description": "Official brand introduction and animated logo for SixthPin - AI & Digital Engineering: Ideas to Impact.",
+        "thumbnailUrl": "https://sixthpin.pages.dev/logo.png",
+        "uploadDate": "2026-09-08T08:00:00+08:00",
+        "contentUrl": "https://sixthpin.pages.dev/videos/sixthpin-ai-digital-engineering-logo-animation.mp4",
+        "embedUrl": "https://sixthpin.pages.dev",
+        "publisher": {
+          "@type": "Organization",
+          "name": "SixthPin",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sixthpin.pages.dev/logo.png"
+          }
+        }
+      }
     ]
   };
 

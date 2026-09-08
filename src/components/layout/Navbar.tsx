@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { navigationData, NavMenu, NavItem } from "@/data/navigation";
 import { useTheme } from "@/context/ThemeContext";
+import { AnimatedLogo } from "@/components/brand/AnimatedLogo";
 import {
   ChevronDown,
   Menu,
@@ -113,16 +114,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Official Brand Logo */}
-          <Link href="/" className="flex items-center space-x-2 group py-1">
-            <div className="relative flex items-center">
-              <img
-                src="/logo.png"
-                alt="SixthPin - AI & Digital Engineering"
-                className="h-9 sm:h-10 w-auto object-contain rounded-lg bg-white dark:bg-white/95 p-1 shadow-sm border border-slate-200/80 dark:border-white/20 transition-transform duration-200 group-hover:scale-[1.02]"
-              />
-            </div>
-          </Link>
+          {/* Official Animated Brand Logo */}
+          <AnimatedLogo />
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-0.5">
