@@ -94,44 +94,44 @@ const navItemStyleMap: Record<
   string,
   {
     icon: React.ReactNode;
-    textClasses: string;
-    glowBorder: string;
+    bgClasses: string;
+    activeClasses: string;
   }
 > = {
   "Solutions": {
-    icon: <Cpu className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 animate-pulse" />,
-    textClasses: "text-emerald-700 dark:text-emerald-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-200 font-extrabold",
-    glowBorder: "hover:border-emerald-400/60 dark:hover:border-emerald-400/60 hover:shadow-emerald-500/10",
+    icon: <Cpu className="w-3.5 h-3.5 text-white animate-pulse" />,
+    bgClasses: "bg-emerald-600 hover:bg-emerald-700 text-white border-emerald-500 shadow-sm shadow-emerald-600/20",
+    activeClasses: "bg-emerald-700 border-emerald-400 ring-2 ring-emerald-300/40 shadow-md",
   },
   "AI & Automation": {
-    icon: <Sparkles className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 animate-spin" style={{ animationDuration: "6s" }} />,
-    textClasses: "text-cyan-700 dark:text-cyan-300 group-hover:text-cyan-600 dark:group-hover:text-cyan-200 font-extrabold",
-    glowBorder: "hover:border-cyan-400/60 dark:hover:border-cyan-400/60 hover:shadow-cyan-500/10",
+    icon: <Sparkles className="w-3.5 h-3.5 text-white animate-spin" style={{ animationDuration: "6s" }} />,
+    bgClasses: "bg-cyan-600 hover:bg-cyan-700 text-white border-cyan-500 shadow-sm shadow-cyan-600/20",
+    activeClasses: "bg-cyan-700 border-cyan-400 ring-2 ring-cyan-300/40 shadow-md",
   },
   "Digital Engineering": {
-    icon: <Layers className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform" />,
-    textClasses: "text-indigo-700 dark:text-indigo-300 group-hover:text-indigo-600 dark:group-hover:text-indigo-200 font-extrabold",
-    glowBorder: "hover:border-indigo-400/60 dark:hover:border-indigo-400/60 hover:shadow-indigo-500/10",
+    icon: <Layers className="w-3.5 h-3.5 text-white group-hover:scale-110 transition-transform" />,
+    bgClasses: "bg-indigo-600 hover:bg-indigo-700 text-white border-indigo-500 shadow-sm shadow-indigo-600/20",
+    activeClasses: "bg-indigo-700 border-indigo-400 ring-2 ring-indigo-300/40 shadow-md",
   },
   "Data & Cloud": {
-    icon: <Cloud className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400 group-hover:-translate-y-0.5 transition-transform" />,
-    textClasses: "text-sky-700 dark:text-sky-300 group-hover:text-sky-600 dark:group-hover:text-sky-200 font-extrabold",
-    glowBorder: "hover:border-sky-400/60 dark:hover:border-sky-400/60 hover:shadow-sky-500/10",
+    icon: <Cloud className="w-3.5 h-3.5 text-white group-hover:-translate-y-0.5 transition-transform" />,
+    bgClasses: "bg-sky-600 hover:bg-sky-700 text-white border-sky-500 shadow-sm shadow-sky-600/20",
+    activeClasses: "bg-sky-700 border-sky-400 ring-2 ring-sky-300/40 shadow-md",
   },
   "Case Studies": {
-    icon: <Activity className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 animate-pulse" />,
-    textClasses: "text-amber-700 dark:text-amber-300 group-hover:text-amber-600 dark:group-hover:text-amber-200 font-extrabold",
-    glowBorder: "hover:border-amber-400/60 dark:hover:border-amber-400/60 hover:shadow-amber-500/10",
+    icon: <Activity className="w-3.5 h-3.5 text-white animate-pulse" />,
+    bgClasses: "bg-orange-500 hover:bg-orange-600 text-white border-orange-400 shadow-sm shadow-orange-500/20",
+    activeClasses: "bg-orange-600 border-orange-300 ring-2 ring-orange-300/40 shadow-md",
   },
   "Insights": {
-    icon: <FileText className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400 group-hover:rotate-6 transition-transform" />,
-    textClasses: "text-rose-700 dark:text-rose-300 group-hover:text-rose-600 dark:group-hover:text-rose-200 font-extrabold",
-    glowBorder: "hover:border-rose-400/60 dark:hover:border-rose-400/60 hover:shadow-rose-500/10",
+    icon: <FileText className="w-3.5 h-3.5 text-white group-hover:rotate-6 transition-transform" />,
+    bgClasses: "bg-rose-600 hover:bg-rose-700 text-white border-rose-500 shadow-sm shadow-rose-600/20",
+    activeClasses: "bg-rose-700 border-rose-400 ring-2 ring-rose-300/40 shadow-md",
   },
   "Company": {
-    icon: <Users className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 group-hover:scale-105 transition-transform" />,
-    textClasses: "text-purple-700 dark:text-purple-300 group-hover:text-purple-600 dark:group-hover:text-purple-200 font-extrabold",
-    glowBorder: "hover:border-purple-400/60 dark:hover:border-purple-400/60 hover:shadow-purple-500/10",
+    icon: <Users className="w-3.5 h-3.5 text-white group-hover:scale-105 transition-transform" />,
+    bgClasses: "bg-purple-600 hover:bg-purple-700 text-white border-purple-500 shadow-sm shadow-purple-600/20",
+    activeClasses: "bg-purple-700 border-purple-400 ring-2 ring-purple-300/40 shadow-md",
   },
 };
 
@@ -162,13 +162,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
           {/* Official Animated Brand Logo */}
           <AnimatedLogo />
 
-          {/* Desktop Navigation with Common Frosted Background + Distinct Font Colors & Micro-Animations */}
+          {/* Desktop Navigation with Vibrant Color-Coded Background Capsules & Micro-Animations */}
           <nav className="hidden lg:flex items-center space-x-1.5">
             {navigationData.map((item) => {
               const style = navItemStyleMap[item.label] || {
                 icon: null,
-                textClasses: "text-slate-700 dark:text-slate-200 font-bold",
-                glowBorder: "hover:border-blue-400/50",
+                bgClasses: "bg-slate-700 hover:bg-slate-800 text-white border-slate-600",
+                activeClasses: "bg-slate-800",
               };
 
               const isActive = activeDropdown === item.label;
@@ -183,26 +183,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
                   {item.href ? (
                     <Link
                       href={item.href}
-                      className={`px-3 py-1.5 rounded-xl text-xs flex items-center gap-1.5 bg-slate-100/90 hover:bg-slate-200/90 dark:bg-white/[0.07] dark:hover:bg-white/[0.13] border border-slate-200/90 dark:border-white/15 shadow-sm backdrop-blur-md hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 ${style.textClasses} ${style.glowBorder}`}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 border shadow-sm backdrop-blur-md hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 ${style.bgClasses}`}
                     >
                       {style.icon}
                       <span>{item.label}</span>
                     </Link>
                   ) : (
                     <button
-                      className={`px-3 py-1.5 rounded-xl text-xs flex items-center gap-1.5 border backdrop-blur-md hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 shadow-sm ${
-                        style.textClasses
-                      } ${style.glowBorder} ${
-                        isActive
-                          ? "bg-slate-200 dark:bg-white/[0.18] border-slate-300 dark:border-white/30 shadow-md ring-1 ring-white/20"
-                          : "bg-slate-100/90 hover:bg-slate-200/90 dark:bg-white/[0.07] dark:hover:bg-white/[0.13] border-slate-200/90 dark:border-white/15"
+                      className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 border backdrop-blur-md hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 ${
+                        isActive ? style.activeClasses : style.bgClasses
                       }`}
                     >
                       {style.icon}
                       <span>{item.label}</span>
                       <ChevronDown
-                        className={`w-3 h-3 transition-transform duration-200 opacity-75 ${
-                          isActive ? "rotate-180 opacity-100" : ""
+                        className={`w-3 h-3 text-white transition-transform duration-200 ${
+                          isActive ? "rotate-180 opacity-100" : "opacity-80"
                         }`}
                       />
                     </button>
@@ -345,9 +341,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
 
             <button
               onClick={onOpenAssessment}
-              className="px-3.5 py-1.5 rounded-xl text-xs font-bold text-orange-700 dark:text-orange-300 bg-slate-100/90 dark:bg-white/[0.07] hover:bg-slate-200/90 dark:hover:bg-white/[0.13] border border-orange-400/40 hover:border-orange-400 shadow-sm transition-all hover:-translate-y-0.5 flex items-center gap-1.5"
+              className="px-3.5 py-1.5 rounded-xl text-xs font-bold text-white bg-orange-500 hover:bg-orange-600 border border-orange-400 shadow-sm shadow-orange-500/25 transition-all hover:-translate-y-0.5 flex items-center gap-1.5"
             >
-              <Cpu className="w-3.5 h-3.5 text-orange-500 animate-pulse" />
+              <Cpu className="w-3.5 h-3.5 text-white animate-pulse" />
               AI Maturity Benchmark
             </button>
             <button
@@ -386,17 +382,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
         </div>
       </div>
 
-      {/* --- MOBILE IMPORTANT HEADINGS BAR (Common Frosted Capsule + Distinct Font Colors & Micro-Animations) --- */}
-      <div className="lg:hidden w-full border-t border-slate-200/80 dark:border-white/10 bg-slate-50/95 dark:bg-[#060911]/95 backdrop-blur-xl overflow-x-auto scrollbar-none py-2 px-3 shadow-inner">
+      {/* --- MOBILE IMPORTANT HEADINGS BAR (Vibrant Color-Coded Background Capsules with White Text) --- */}
+      <div className="lg:hidden w-full border-t border-slate-200/80 dark:border-white/10 bg-slate-100/95 dark:bg-[#060911]/95 backdrop-blur-xl overflow-x-auto scrollbar-none py-2 px-3 shadow-inner">
         <div className="flex items-center gap-2 w-max">
           {/* AI & Automation */}
           <Link
             href="/services/multi-agent-orchestration"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-slate-100/90 dark:bg-white/[0.08] text-cyan-700 dark:text-cyan-300 border border-slate-200 dark:border-white/15 shadow-sm active:scale-95 transition-transform whitespace-nowrap group hover:border-cyan-400/50"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-cyan-600 active:bg-cyan-700 text-white border border-cyan-500 shadow-sm active:scale-95 transition-transform whitespace-nowrap group"
           >
-            <Sparkles className="w-3.5 h-3.5 text-cyan-500 dark:text-cyan-400 animate-spin" style={{ animationDuration: "6s" }} />
+            <Sparkles className="w-3.5 h-3.5 text-white animate-spin" style={{ animationDuration: "6s" }} />
             <span>AI & Automation</span>
-            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-black bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 border border-cyan-400/40">
+            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-black bg-cyan-800/80 text-white border border-cyan-400/50">
               AI
             </span>
           </Link>
@@ -404,11 +400,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
           {/* Digital Engineering */}
           <Link
             href="/services/legacy-modernization"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-slate-100/90 dark:bg-white/[0.08] text-indigo-700 dark:text-indigo-300 border border-slate-200 dark:border-white/15 shadow-sm active:scale-95 transition-transform whitespace-nowrap hover:border-indigo-400/50"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-indigo-600 active:bg-indigo-700 text-white border border-indigo-500 shadow-sm active:scale-95 transition-transform whitespace-nowrap"
           >
-            <Layers className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400" />
+            <Layers className="w-3.5 h-3.5 text-white" />
             <span>Digital Engineering</span>
-            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-black bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 border border-indigo-400/40">
+            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-black bg-indigo-800/80 text-white border border-indigo-400/50">
               ENG
             </span>
           </Link>
@@ -416,11 +412,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
           {/* Data & Cloud */}
           <Link
             href="/services/cloud-native-platforms"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-slate-100/90 dark:bg-white/[0.08] text-sky-700 dark:text-sky-300 border border-slate-200 dark:border-white/15 shadow-sm active:scale-95 transition-transform whitespace-nowrap hover:border-sky-400/50"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-sky-600 active:bg-sky-700 text-white border border-sky-500 shadow-sm active:scale-95 transition-transform whitespace-nowrap"
           >
-            <Cloud className="w-3.5 h-3.5 text-sky-500 dark:text-sky-400" />
+            <Cloud className="w-3.5 h-3.5 text-white" />
             <span>Data & Cloud</span>
-            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-black bg-sky-500/20 text-sky-600 dark:text-sky-300 border border-sky-400/40">
+            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-black bg-sky-800/80 text-white border border-sky-400/50">
               CLOUD
             </span>
           </Link>
@@ -428,11 +424,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
           {/* Solutions */}
           <Link
             href="/services"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-slate-100/90 dark:bg-white/[0.08] text-emerald-700 dark:text-emerald-300 border border-slate-200 dark:border-white/15 shadow-sm active:scale-95 transition-transform whitespace-nowrap hover:border-emerald-400/50"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-emerald-600 active:bg-emerald-700 text-white border border-emerald-500 shadow-sm active:scale-95 transition-transform whitespace-nowrap"
           >
-            <Cpu className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400 animate-pulse" />
+            <Cpu className="w-3.5 h-3.5 text-white animate-pulse" />
             <span>Solutions</span>
-            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-black bg-emerald-500/20 text-emerald-600 dark:text-emerald-300 border border-emerald-400/40">
+            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-black bg-emerald-800/80 text-white border border-emerald-400/50">
               CORE
             </span>
           </Link>
@@ -440,11 +436,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
           {/* Case Studies */}
           <Link
             href="/case-studies"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-slate-100/90 dark:bg-white/[0.08] text-amber-700 dark:text-amber-300 border border-slate-200 dark:border-white/15 shadow-sm active:scale-95 transition-transform whitespace-nowrap hover:border-amber-400/50"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-orange-500 active:bg-orange-600 text-white border border-orange-400 shadow-sm active:scale-95 transition-transform whitespace-nowrap"
           >
-            <Activity className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400 animate-pulse" />
+            <Activity className="w-3.5 h-3.5 text-white animate-pulse" />
             <span>Case Studies</span>
-            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-black bg-amber-500/20 text-amber-600 dark:text-amber-300 border border-amber-400/40">
+            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-black bg-orange-700/80 text-white border border-orange-300/50">
               ROI
             </span>
           </Link>
@@ -452,11 +448,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
           {/* Insights */}
           <Link
             href="/insights"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-slate-100/90 dark:bg-white/[0.08] text-rose-700 dark:text-rose-300 border border-slate-200 dark:border-white/15 shadow-sm active:scale-95 transition-transform whitespace-nowrap hover:border-rose-400/50"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-rose-600 active:bg-rose-700 text-white border border-rose-500 shadow-sm active:scale-95 transition-transform whitespace-nowrap"
           >
-            <FileText className="w-3.5 h-3.5 text-rose-500 dark:text-rose-400" />
+            <FileText className="w-3.5 h-3.5 text-white" />
             <span>Insights</span>
-            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-black bg-rose-500/20 text-rose-600 dark:text-rose-300 border border-rose-400/40">
+            <span className="px-1.5 py-0.2 rounded-full text-[8px] font-mono font-black bg-rose-800/80 text-white border border-rose-400/50">
               NEW
             </span>
           </Link>
@@ -464,9 +460,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment, onOpenConsulta
           {/* Company */}
           <Link
             href="/company/about"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-extrabold bg-slate-100/90 dark:bg-white/[0.08] text-purple-700 dark:text-purple-300 border border-slate-200 dark:border-white/15 shadow-sm active:scale-95 transition-transform whitespace-nowrap hover:border-purple-400/50"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-purple-600 active:bg-purple-700 text-white border border-purple-500 shadow-sm active:scale-95 transition-transform whitespace-nowrap"
           >
-            <Users className="w-3.5 h-3.5 text-purple-500 dark:text-purple-400" />
+            <Users className="w-3.5 h-3.5 text-white" />
             <span>Company</span>
           </Link>
         </div>
