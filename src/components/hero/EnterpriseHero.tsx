@@ -57,26 +57,26 @@ const heroVideos: VideoPhase[] = [
     src: "/videos/Prompt_Option_The_Blueprint.mp4",
     mobileSrc: "/videos/mobile_view/Prompt Option The Blueprint_mobile.mp4",
     theme: {
-      badgeBg: "bg-blue-950/85",
-      badgeBorder: "border-sky-400/50",
-      badgeText: "text-sky-300",
+      badgeBg: "bg-black/50 backdrop-blur-md",
+      badgeBorder: "border-sky-400/35",
+      badgeText: "text-sky-200",
       badgeIconColor: "text-sky-400",
-      headlineGradient: "bg-gradient-to-r from-white via-sky-100 to-cyan-300",
-      cardBg: "bg-gradient-to-br from-slate-950/95 via-blue-950/90 to-slate-900/95",
-      cardBorder: "border-sky-400/60",
-      cardShadow: "shadow-[0_0_40px_rgba(56,189,248,0.25)]",
-      cardGlow: "bg-sky-500/20",
-      focusBg: "bg-sky-500/20",
-      focusBorder: "border-sky-400/50",
-      focusText: "text-sky-300",
+      headlineGradient: "bg-gradient-to-r from-white via-slate-100 to-sky-200",
+      cardBg: "bg-slate-950/60 backdrop-blur-xl",
+      cardBorder: "border-sky-400/35",
+      cardShadow: "shadow-[0_8px_32px_rgba(0,0,0,0.5)]",
+      cardGlow: "bg-sky-500/10",
+      focusBg: "bg-sky-950/40",
+      focusBorder: "border-sky-400/35",
+      focusText: "text-sky-200",
       focusIconColor: "text-sky-400",
-      purposeText: "text-sky-50",
-      nextBtnGradient: "bg-gradient-to-r from-blue-600 to-sky-600 hover:from-blue-500 hover:to-sky-500",
-      nextBtnShadow: "shadow-blue-500/40",
+      purposeText: "text-slate-200",
+      nextBtnGradient: "bg-blue-600/90 hover:bg-blue-600",
+      nextBtnShadow: "shadow-blue-600/30",
       nextBtnTextColor: "text-white",
-      progressBarActive: "bg-gradient-to-r from-blue-500 to-sky-400 shadow-sky-500/50",
-      progressBarDone: "bg-sky-400/60",
-      ambientGlow: "bg-blue-500/20",
+      progressBarActive: "bg-gradient-to-r from-blue-500 to-sky-400 shadow-sky-500/30",
+      progressBarDone: "bg-sky-400/50",
+      ambientGlow: "bg-blue-500/10",
     },
   },
   {
@@ -90,26 +90,26 @@ const heroVideos: VideoPhase[] = [
     src: "/videos/Prompt_Option_AI_Native_Eng.mp4",
     mobileSrc: "/videos/mobile_view/Prompt Option Ai Native Eng_mobile.mp4",
     theme: {
-      badgeBg: "bg-emerald-950/85",
-      badgeBorder: "border-emerald-400/50",
-      badgeText: "text-emerald-300",
+      badgeBg: "bg-black/50 backdrop-blur-md",
+      badgeBorder: "border-emerald-400/35",
+      badgeText: "text-emerald-200",
       badgeIconColor: "text-emerald-400",
-      headlineGradient: "bg-gradient-to-r from-white via-emerald-100 to-teal-300",
-      cardBg: "bg-gradient-to-br from-slate-950/95 via-emerald-950/90 to-teal-950/95",
-      cardBorder: "border-emerald-400/60",
-      cardShadow: "shadow-[0_0_40px_rgba(52,211,153,0.25)]",
-      cardGlow: "bg-emerald-500/20",
-      focusBg: "bg-emerald-500/20",
-      focusBorder: "border-emerald-400/50",
-      focusText: "text-emerald-300",
+      headlineGradient: "bg-gradient-to-r from-white via-slate-100 to-emerald-200",
+      cardBg: "bg-slate-950/60 backdrop-blur-xl",
+      cardBorder: "border-emerald-400/35",
+      cardShadow: "shadow-[0_8px_32px_rgba(0,0,0,0.5)]",
+      cardGlow: "bg-emerald-500/10",
+      focusBg: "bg-emerald-950/40",
+      focusBorder: "border-emerald-400/35",
+      focusText: "text-emerald-200",
       focusIconColor: "text-emerald-400",
-      purposeText: "text-emerald-50",
-      nextBtnGradient: "bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500",
-      nextBtnShadow: "shadow-emerald-500/40",
+      purposeText: "text-slate-200",
+      nextBtnGradient: "bg-emerald-600/90 hover:bg-emerald-600",
+      nextBtnShadow: "shadow-emerald-600/30",
       nextBtnTextColor: "text-white",
-      progressBarActive: "bg-gradient-to-r from-emerald-500 to-teal-400 shadow-emerald-500/50",
-      progressBarDone: "bg-emerald-400/60",
-      ambientGlow: "bg-emerald-500/20",
+      progressBarActive: "bg-gradient-to-r from-emerald-500 to-teal-400 shadow-emerald-500/30",
+      progressBarDone: "bg-emerald-400/50",
+      ambientGlow: "bg-emerald-500/10",
     },
   },
   {
@@ -123,26 +123,26 @@ const heroVideos: VideoPhase[] = [
     src: "/videos/Prompt_Option_Human_Centric.mp4",
     mobileSrc: "/videos/mobile_view/Prompt Option Human Centric(1))mbile.mp4",
     theme: {
-      badgeBg: "bg-amber-950/85",
-      badgeBorder: "border-amber-400/50",
-      badgeText: "text-amber-300",
+      badgeBg: "bg-black/50 backdrop-blur-md",
+      badgeBorder: "border-amber-400/35",
+      badgeText: "text-amber-200",
       badgeIconColor: "text-amber-400",
-      headlineGradient: "bg-gradient-to-r from-white via-amber-100 to-orange-300",
-      cardBg: "bg-gradient-to-br from-slate-950/95 via-amber-950/90 to-orange-950/95",
-      cardBorder: "border-amber-400/60",
-      cardShadow: "shadow-[0_0_40px_rgba(251,191,36,0.25)]",
-      cardGlow: "bg-amber-500/20",
-      focusBg: "bg-amber-500/20",
-      focusBorder: "border-amber-400/50",
-      focusText: "text-amber-300",
+      headlineGradient: "bg-gradient-to-r from-white via-slate-100 to-amber-200",
+      cardBg: "bg-slate-950/60 backdrop-blur-xl",
+      cardBorder: "border-amber-400/35",
+      cardShadow: "shadow-[0_8px_32px_rgba(0,0,0,0.5)]",
+      cardGlow: "bg-amber-500/10",
+      focusBg: "bg-amber-950/40",
+      focusBorder: "border-amber-400/35",
+      focusText: "text-amber-200",
       focusIconColor: "text-amber-400",
-      purposeText: "text-amber-50",
-      nextBtnGradient: "bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400",
-      nextBtnShadow: "shadow-amber-500/40",
-      nextBtnTextColor: "text-slate-950 font-black",
-      progressBarActive: "bg-gradient-to-r from-amber-500 to-orange-400 shadow-amber-500/50",
-      progressBarDone: "bg-amber-400/60",
-      ambientGlow: "bg-amber-500/20",
+      purposeText: "text-slate-200",
+      nextBtnGradient: "bg-amber-600/90 hover:bg-amber-600",
+      nextBtnShadow: "shadow-amber-600/30",
+      nextBtnTextColor: "text-white font-bold",
+      progressBarActive: "bg-gradient-to-r from-amber-500 to-orange-400 shadow-amber-500/30",
+      progressBarDone: "bg-amber-400/50",
+      ambientGlow: "bg-amber-500/10",
     },
   },
   {
@@ -156,26 +156,26 @@ const heroVideos: VideoPhase[] = [
     src: "/videos/Prompt_Option_The_Transform.mp4",
     mobileSrc: "/videos/mobile_view/Prompt Option The Transform_mobile.mp4",
     theme: {
-      badgeBg: "bg-purple-950/85",
-      badgeBorder: "border-purple-400/50",
-      badgeText: "text-purple-300",
+      badgeBg: "bg-black/50 backdrop-blur-md",
+      badgeBorder: "border-purple-400/35",
+      badgeText: "text-purple-200",
       badgeIconColor: "text-purple-400",
-      headlineGradient: "bg-gradient-to-r from-white via-purple-100 to-fuchsia-300",
-      cardBg: "bg-gradient-to-br from-slate-950/95 via-purple-950/90 to-indigo-950/95",
-      cardBorder: "border-purple-400/60",
-      cardShadow: "shadow-[0_0_40px_rgba(192,132,252,0.25)]",
-      cardGlow: "bg-purple-500/20",
-      focusBg: "bg-purple-500/20",
-      focusBorder: "border-purple-400/50",
-      focusText: "text-purple-300",
+      headlineGradient: "bg-gradient-to-r from-white via-slate-100 to-purple-200",
+      cardBg: "bg-slate-950/60 backdrop-blur-xl",
+      cardBorder: "border-purple-400/35",
+      cardShadow: "shadow-[0_8px_32px_rgba(0,0,0,0.5)]",
+      cardGlow: "bg-purple-500/10",
+      focusBg: "bg-purple-950/40",
+      focusBorder: "border-purple-400/35",
+      focusText: "text-purple-200",
       focusIconColor: "text-purple-400",
-      purposeText: "text-purple-50",
-      nextBtnGradient: "bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500 hover:from-purple-400 hover:to-pink-400",
-      nextBtnShadow: "shadow-purple-500/40",
+      purposeText: "text-slate-200",
+      nextBtnGradient: "bg-purple-600/90 hover:bg-purple-600",
+      nextBtnShadow: "shadow-purple-600/30",
       nextBtnTextColor: "text-white font-bold",
-      progressBarActive: "bg-gradient-to-r from-purple-500 to-fuchsia-400 shadow-purple-500/50",
-      progressBarDone: "bg-purple-400/60",
-      ambientGlow: "bg-purple-500/20",
+      progressBarActive: "bg-gradient-to-r from-purple-500 to-fuchsia-400 shadow-purple-500/30",
+      progressBarDone: "bg-purple-400/50",
+      ambientGlow: "bg-purple-500/10",
     },
   },
 ];
@@ -313,7 +313,7 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
 
   return (
     <section className="relative pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-slate-950 text-white border-b border-white/10 transition-colors duration-500 min-h-[640px] flex flex-col justify-center">
-      {/* HTML5 Video Background Layer - Full Coverage Behind Text (Adaptive 9:16 mobile / 16:9 desktop) */}
+      {/* HTML5 Video Background Layer - High Visibility & Adaptive 9:16 mobile / 16:9 desktop */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {!videoError ? (
           <video
@@ -326,17 +326,17 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
             preload="auto"
             onEnded={handleVideoEnded}
             onError={() => setVideoError(true)}
-            className="absolute inset-0 w-full h-full object-cover object-center opacity-75 sm:opacity-80 transition-opacity duration-700 scale-105"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-95 sm:opacity-80 transition-opacity duration-700 scale-105"
           >
             <source src={activeVideoSrc} type="video/mp4" />
           </video>
         ) : null}
 
-        {/* Balanced Dark Cinematic Vignette & Dynamic Ambient Glows that change with current video theme */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/45 to-black/90 transition-opacity duration-300" />
-        <div className="absolute inset-0 bg-theme-grid opacity-20" />
+        {/* Lightweight vignette to maximize video clarity on mobile while keeping text readable */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-black/65 sm:from-black/80 sm:via-black/45 sm:to-black/90 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-theme-grid opacity-10 sm:opacity-20" />
         <div className={`absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[380px] ${currentTheme.ambientGlow} rounded-full blur-[140px] pointer-events-none transition-all duration-700`} />
-        <div className="absolute top-1/3 right-10 w-[450px] h-[320px] bg-orange-500/10 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute top-1/3 right-10 w-[450px] h-[320px] bg-orange-500/5 rounded-full blur-[130px] pointer-events-none" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
