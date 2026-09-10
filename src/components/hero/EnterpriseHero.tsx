@@ -41,6 +41,7 @@ interface VideoPhase {
   purpose: string;
   highlight: string;
   src: string;
+  mobileSrc: string;
   theme: VideoTheme;
 }
 
@@ -54,6 +55,7 @@ const heroVideos: VideoPhase[] = [
     purpose: "Deconstructing legacy silos into modular, secure, and enterprise-grade cloud foundations.",
     highlight: "Modular Cloud & API Architecture",
     src: "/videos/Prompt_Option_The_Blueprint.mp4",
+    mobileSrc: "/videos/mobile_view/Prompt Option The Blueprint_mobile.mp4",
     theme: {
       badgeBg: "bg-blue-950/85",
       badgeBorder: "border-sky-400/50",
@@ -86,6 +88,7 @@ const heroVideos: VideoPhase[] = [
     purpose: "Orchestrating autonomous agents, enterprise RAG pipelines, and deterministic LLM systems.",
     highlight: "Multi-Agent & Production GenAI",
     src: "/videos/Prompt_Option_AI_Native_Eng.mp4",
+    mobileSrc: "/videos/mobile_view/Prompt Option Ai Native Eng_mobile.mp4",
     theme: {
       badgeBg: "bg-emerald-950/85",
       badgeBorder: "border-emerald-400/50",
@@ -118,6 +121,7 @@ const heroVideos: VideoPhase[] = [
     purpose: "Blending intuitive user experience, contextual automation, and high-velocity developer tools.",
     highlight: "High-Velocity Experience Engineering",
     src: "/videos/Prompt_Option_Human_Centric.mp4",
+    mobileSrc: "/videos/mobile_view/Prompt Option Human Centric(1))mbile.mp4",
     theme: {
       badgeBg: "bg-amber-950/85",
       badgeBorder: "border-amber-400/50",
@@ -150,6 +154,7 @@ const heroVideos: VideoPhase[] = [
     purpose: "Delivering measurable business ROI, continuous compliance, and future-proof digital agility.",
     highlight: "End-to-End Digital Modernization",
     src: "/videos/Prompt_Option_The_Transform.mp4",
+    mobileSrc: "/videos/mobile_view/Prompt Option The Transform_mobile.mp4",
     theme: {
       badgeBg: "bg-purple-950/85",
       badgeBorder: "border-purple-400/50",
@@ -190,10 +195,21 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
   const [videoError, setVideoError] = useState(false);
   const [typedLength, setTypedLength] = useState(0);
   const [isTypingFinished, setIsTypingFinished] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const currentVideo = heroVideos[activeVideoIndex];
   const currentTheme = currentVideo.theme;
+
+  // Responsive device detection for 9:16 mobile vs 16:9 desktop videos
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Guaranteed browser autoplay handling with muted attribute
   useEffect(() => {
@@ -209,7 +225,7 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
         console.log("Autoplay waiting on interaction:", err);
       });
     }
-  }, [activeVideoIndex, isIntroComplete]);
+  }, [activeVideoIndex, isIntroComplete, isMobile]);
 
   // Handle video completion & progression
   const handleVideoEnded = () => {
@@ -293,14 +309,16 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
     );
   };
 
+  const activeVideoSrc = isMobile ? currentVideo.mobileSrc : currentVideo.src;
+
   return (
     <section className="relative pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-slate-950 text-white border-b border-white/10 transition-colors duration-500 min-h-[640px] flex flex-col justify-center">
-      {/* HTML5 Video Background Layer - Full Coverage Behind Text */}
+      {/* HTML5 Video Background Layer - Full Coverage Behind Text (Adaptive 9:16 mobile / 16:9 desktop) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {!videoError ? (
           <video
             ref={videoRef}
-            key={currentVideo.src}
+            key={`${currentVideo.id}-${isMobile ? "mobile" : "desktop"}`}
             autoPlay
             loop={isIntroComplete} // Loop once completed, play once per video during intro sequence
             muted
@@ -310,7 +328,7 @@ export const EnterpriseHero: React.FC<EnterpriseHeroProps> = ({
             onError={() => setVideoError(true)}
             className="absolute inset-0 w-full h-full object-cover object-center opacity-75 sm:opacity-80 transition-opacity duration-700 scale-105"
           >
-            <source src={currentVideo.src} type="video/mp4" />
+            <source src={activeVideoSrc} type="video/mp4" />
           </video>
         ) : null}
 
